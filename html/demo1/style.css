@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.page {
+    padding: 50px 20px;
+
+}
+.title {
+    font-weight: 700;
+    font-size: 25px;
+    font-family: serif;
+    margin-bottom: 30px;
+}
+.container {
+    width: 1075px;
+}
+.content {
+    margin-right: 20px;
+    width: 335px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px #aaaaaa;
+    border-radius: 20px;
+    /* display: inline-block; */
+    float: left;
+}
+/* 选择最后一个容器 */
+.content:last-child {
+    margin-right: 0;
+}
+.content-title {
+    font-weight: 700;
+    font-size: 25px;
+    font-family: serif;
+}
+.content-desc {
+    margin: 20px 0;
+    margin-bottom: 50px;
+}
+.content .img img {
+    width: 100%;
+    margin: 0 auto;
+}
