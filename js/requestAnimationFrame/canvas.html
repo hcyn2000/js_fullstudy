@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #myCanvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas"></canvas>
+
+    <script>
+        var c = document.getElementById('myCanvas')
+        var ctx = c.getContext('2d')    //创建一个2d画布
+        ctx.fillStyle = 'red'   //背景颜色
+        ctx.fillRect(0, 0, 300, 150)   //创建一个矩形 前两个参数为xy轴 后两个参数为宽高
+        ctx.clearRect(20, 20, 100, 50) //清除出来一个空白区域
+        var dis = 0
+        function animation() {
+            requestAnimationFrame(function () {
+                ctx.clearRect(0, 0, 300, 150) //清除来一个空白区域
+                ctx.fillStyle = `rgb(0,0,0)`    
+                ctx.fillText(dis++, 100, 90)    //字体
+                ctx.font = '50px Verdana'       //字体大小
+                animation()
+                if (dis >= 249) {
+                    dis = 0
+                }
+            })
+        }
+        animation()
+    </script>
+</body>
+
+</html>

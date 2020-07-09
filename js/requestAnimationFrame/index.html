@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            font-family: sans-serif;
+            background: #13091b;
+            height: 100%;
+        }
+
+        body {
+            background: url(https://p1.music.126.net/gAmIGjlWnYXE_0O8LFp5-w==/109951164382001054.jpg) no-repeat;
+            background-size: cover;
+            /*平铺图片*/
+        }
+
+        audio {
+            visibility: hidden;
+            /*隐藏*/
+        }
+
+        #play-btn {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #13091b;
+            display: inline-block;
+            width: 150px;
+            height: 60px;
+            background-color: aqua;
+            line-height: 60px;
+            text-align: center;
+            border-radius: 4px;
+            /*设置圆角*/
+            text-decoration: none;
+            /*取消a标签下划线*/
+            font-size: 18px;
+            letter-spacing: 2px;
+            /*调整字间距*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <canvas id="canvas"></canvas>
+        <audio id="audio" controls="controls" crossorigin="anonymous" ref="audio" src="http://m10.music.126.net/20200709191905/bd2dbce166df63ac60b43a2886ea5d3f/yyaac/0708/0f59/5253/0bb344e331839d4c5121e963cbddb3a3.m4a" crossorigin="anonymous" crossorigin="anonymous
+        "></audio>
+        <a href="javascript:;" id="play-btn">PLAY</a>
+    </div>
+
+    <script>
+        var btn = document.getElementById('play-btn')
+        var audio = document.getElementById('audio')
+
+        // addEventListener  监听各种事件
+        // btn.addEventListener('click',function(){
+        // })
+
+        btn.onclick = function () {
+            audio.play()
+            btn.style.display = 'none'
+
+            //出现音浪
+            onLoadAudio()
+        }
+
+        function onLoadAudio() {
+            var context = new (window.AudioContext || window.webkitAudioContext) //拿到AudioContext参数
+            // console.log(context);
+            var analyser = context.createAnalyser()  //创建一个分析器，可以获取音频的时间和频率的数据，可视化这个数据
+            // console.log(analyser);
+            analyser.fftSize = 512
+            //输入 流式播放
+            var source = context.createMediaElementSource(audio)
+            source.connect(analyser)
+            analyser.connect(context.destination)
+
+            var bufferLength = analyser.frequencyBinCount
+            // console.log(bufferLength);
+
+            var dataArray = new Uint8Array(bufferLength)
+            // console.log(dataArray);
+
+
+
+            var canvas = document.getElementById('canvas')
+            canvas.width = window.innerWidth    //设置成屏幕一样宽
+            canvas.height = window.innerHeight  //设置成屏幕一样高
+
+            var ctx = canvas.getContext('2d')
+            var WIDTH = canvas.width
+            var HEIGHT = canvas.height
+
+            var barWidth = WIDTH / bufferLength * 1.5
+            var barHeight;
+
+            function renderFrame() {
+                requestAnimationFrame(renderFrame)
+
+                analyser.getByteFrequencyData(dataArray)
+                ctx.clearRect(0, 0, WIDTH, HEIGHT)
+
+                for (var i = 0, x = 0; i < bufferLength; i++) {
+                    barHeight = dataArray[i]
+                    var r = barHeight + 28 * (i / bufferLength)
+                    var g = 250 * (i / bufferLength)
+                    var b = 56
+
+                    ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")"
+                    ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight)
+                    x += barWidth + 2
+                }
+            }
+            renderFrame()
+        }
+
+
+
+    </script>
+</body>
+
+</html>
