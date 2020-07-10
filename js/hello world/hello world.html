@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #cvs {
+            /* color: ye; */
+            width: 300px;
+            height: 150px;
+            border: 1px solid #3d3d3d;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <canvas id="cvs"></canvas> -->
+    <canvas id="cvs"></canvas>
+    <script>
+        var cvs = document.getElementById('cvs')
+        var ctx = cvs.getContext("2d")
+        ctx.font = "30px Verdana"
+        var gradient = ctx.createLinearGradient(20, 100, 200, 0)
+        gradient.addColorStop(0, "yellow")
+        gradient.addColorStop(0.5,"blue")
+        gradient.addColorStop(1,"red")
+        ctx.fillStyle = gradient;
+        ctx.fillText("hello world", 50, 90)
+    </script>
+</body>
+
+</html>

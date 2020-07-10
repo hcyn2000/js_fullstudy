@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        another_stooge.nickname     //'Moe'
+        //删除 another_stooge 的 nickname 属性，从而暴露出原型的 nickname 属性
+        delete another_stooge.nickname;
+        another_stooge.nickname     //'Curly'
+    </script>
+</body>
+
+</html>

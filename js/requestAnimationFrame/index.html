@@ -114,9 +114,9 @@
 
                 for (var i = 0, x = 0; i < bufferLength; i++) {
                     barHeight = dataArray[i]
-                    var r = barHeight + 28 * (i / bufferLength)
-                    var g = 250 * (i / bufferLength)
-                    var b = 56
+                    var r = barHeight + 50 * (i / bufferLength)
+                    var g = 80 * (i / bufferLength)
+                    var b = 80
 
                     ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")"
                     ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight)
