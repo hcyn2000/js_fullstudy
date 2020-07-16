@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小游戏</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="wrapBg">
+        <!-- 开始标题 -->
+        <div id="headTitle">
+            <!-- 小鸟 -->
+            <img id="headBird" src="./img/bird0.png" alt="小鸟">
+        </div>
+        <!-- 开始按钮 -->
+        <button id="starBtn"></button>
+        <!-- 草地一 -->
+        <div id="grassLand1"></div>
+        <!-- 草地二 -->
+        <div id="grassLand2"></div>
+
+        <div id="score">
+            <div id="num1"></div>
+            <div id="num2"></div>
+            <div id="num3"></div>
+        </div>
+        <div id="gameOver">
+            <img src="img/game_over.jpg" alt="game over" />
+            <img src="img/message.jpg" alt="message" />
+            <img id="ok" src="img/ok.jpg" alt="ok" />
+        </div>
+    </div>
+
+
+    <script src="./js/bird.js"></script>
+    <script src="./js/baseObj.js"></script>
+    <script src="./js/block.js"></script>
+
+    <script>
+        var jsWrapBg = document.getElementById('wrapBg')    //获取容器
+        var jsHeadTitle = document.getElementById('headTitle') // 获取标题
+        var jsHeadBird = document.getElementById('headBird')    // 获取小鸟
+        var blockArr = []   //装管道的
+        var blcokDistance = baseObj.randomNum(120, 350)     //管道之间的间隔
+
+        var jsScore = document.getElementById("score");
+        var jsNum1 = document.getElementById("num1");
+        var jsNum2 = document.getElementById("num2");
+        var jsNum3 = document.getElementById("num3");
+        var score = 0;
+
+        //获取结束面板
+        var jsGameOver = document.getElementById("gameOver");
+        //获取ok按钮
+        var jsOkBtn = document.getElementById("ok");
+
+        var Y = 3   // 标题摆动幅度
+        var index = 0
+        var imgArr = ['img/bird0.png', 'img/bird1.png']
+
+        // 利用帧动画原理来实现小鸟翅膀摆动的样子
+        var headWaveTimer = setInterval(headWave, 200) //设置标题上下摆动的定时器
+        function headWave() {
+            Y *= -1     //Y = Y * -1
+
+            jsHeadTitle.style.top = jsHeadTitle.offsetTop + Y + 'px'    //.offsetTop 指距离上方或上层控件的位置
+            jsHeadBird.src = imgArr[index++]
+            // 当index大于1时，index变成0
+            if (index > 1) {
+                index = 0
+            }
+        }
+
+        var jsGrassLand1 = document.getElementById('grassLand1')
+        var jsGrassLand2 = document.getElementById('grassLand2')
+
+        var landTimer = setInterval(landRun, 30) //设置定时器让草地动起来
+        function landRun() {
+            if (jsGrassLand1.offsetLeft <= -343) {
+                jsGrassLand1.style.left = 343 + 'px'
+            }
+            if (jsGrassLand2.offsetLeft <= -343) {
+                jsGrassLand2.style.left = 343 + 'px'
+            }
+            jsGrassLand1.style.left = jsGrassLand1.offsetLeft - 3 + 'px'    //.offsetLeft 指距离左方或上层控件的位置
+            jsGrassLand2.style.left = jsGrassLand2.offsetLeft - 3 + 'px'
+
+            //管道的移动
+            if (blockArr.length) {
+                for (var i = 0; i < blockArr.length; i++) {
+                    blockArr[i].moveBlock()
+                    var x = baseObj.rectangleCrashExamine(blockArr[i].downDivWrap, bird.div)
+                    var y = baseObj.rectangleCrashExamine(blockArr[i].upDivWrap, bird.div)
+                    var z = bird.div.offsetTop >= 390
+                    if (x || y || z) {
+                        window.clearInterval(landTimer)   //清除草地移动的定时器
+                        jsWrapBg.onclick = null     //清除点击事件
+                        bird.fallSpeed = 0
+
+                        jsScore.style.display = "none"; //隐藏计分器
+                        jsGameOver.style.display = "block"; // 显示gameover面板
+                    }
+                }
+
+                if (blockArr[blockArr.length - 1].downDivWrap.offsetLeft < (450 - blcokDistance)) {
+                    blockDistance = baseObj.randomNum(130, 250);
+                    var newBlock = new Block()
+                    newBlock.createBlock()  //调用生成管道函数
+                    blockArr.push(newBlock) //添加到一个数组里
+                }
+
+                if (blockArr[0].downDivWrap.offsetLeft == -12) {
+                    score++;//积分面板
+                    if (score < 10) {
+                        console.log(2222)
+                        jsNum1.style.backgroundImage = "url(img/" + score + ".jpg)";
+                    } else if (score < 100) {
+                        jsNum2.style.display = "block";
+                        jsNum1.style.backgroundImage = "url(img/" + parseInt(score / 10) + ".jpg)";
+                        jsNum2.style.backgroundImage = "url(img/" + score % 10 + ".jpg)";
+                    } else if (score < 1000) {
+                        jsNum3.style.display = "block";
+                        jsNum1.style.backgroundImage = "url(img/" + parseInt(score / 100) + ".jpg)";
+                        jsNum2.style.backgroundImage = "url(img/" + parseInt(score / 10) % 10 + ".jpg)";
+                        jsNum3.style.backgroundImage = "url(img/" + score % 10 + ".jpg)";
+                    }
+                    console.log(score);
+                }
+
+                // 超出游戏界面移除管道
+                if (blockArr[0].downDivWrap.offsetLeft < -50) {
+                    jsWrapBg.removeChild(blockArr[0].downDivWrap);
+                    jsWrapBg.removeChild(blockArr[0].upDivWrap);
+                    blockArr.shift(blockArr[0]);
+                }
+
+            }
+        }
+
+        var jsStarBtn = document.getElementById('starBtn')  //获取按钮
+        jsStarBtn.onclick = function () {  //为jsStarBtn按钮添加一个点击事件处理程序
+            jsHeadTitle.style.display = 'none'  //隐藏标题
+            clearInterval(headWaveTimer)    //关闭标题摆动的定时器
+            jsStarBtn.style.display = 'none'    //隐藏按钮
+
+            // 插入小鸟到界面当中
+            bird.showBird(jsWrapBg)
+
+            bird.flyBird()  //小鸟下落
+            bird.wingWave() //控制小鸟翅膀煽动
+            jsWrapBg.onclick = function () {
+                bird.fallSpeed = -8
+            }
+
+            // 出现管道
+            var b = new Block()
+            b.createBlock()
+            blockArr.push(b)
+            //记分板变成块级元素
+            jsNum1.style.display = "block";
+            // console.log(blockArr)
+        }
+
+
+        jsOkBtn.onclick = function () {
+            // href 属性是一个可读可写的字符串，可设置或返回当前显示的文档的完整 URL。
+            window.location.href = "index.html"; //刷新页面
+        }
+
+
+
+    </script>
+</body>
+
+</html>

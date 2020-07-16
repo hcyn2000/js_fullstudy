@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="./common.css"> -->
+    <link rel="stylesheet" href="./common.css">
 </head>
 
 <body>
     <div class="gray-mode">
+        <!-- 顶部 -->
         <div id="anony-nav">
             <div class="anony-nav-links">
                 <ul>
@@ -24,6 +25,624 @@
                     <li><a href="#" target="_blank" class="lnk-market">豆瓣豆品</a></li>
                 </ul>
             </div>
+            <h1>
+                <a href="#">豆瓣</a>
+            </h1>
+            <div class="anony-srh">
+                <form action="#" method="get">
+                    <span class="inp">
+                        <input type="text" maxlength="60" size="12" placeholder="书籍、电影、音乐、小组、小站、成员" name="q"
+                            autocomplete="off">
+                    </span>
+                    <span class="bn">
+                        <input type="submit" value="搜索">
+                    </span>
+                </form>
+            </div>
+        </div>
+
+        <!-- 豆瓣6.0 -->
+        <div id="anony-reg-new"
+            style="background-image: url(https://img9.doubanio.com/view/puppy_image/raw/public/16ad990ec23uwn790d4.jpg);">
+            <div class="wrapper">
+                <div class="account-body login-wrap login-start account-anonymous">
+                    <div class="account-body-tabs">
+                        <ul class="tab-start">
+                            <li class="account-tab-phone on">短信登录／注册</li>
+                            <li class="account-tab-account">密码登录</li>
+                        </ul>
+                        <ul class="tab-quick">
+                            <li class="account-tab-scan">二维码登录</li>
+                        </ul>
+                        <div class="account-tab-switch">
+                            <div class="account-tab-switch-icon">
+                                <a class="quick icon-switch"></a>
+                                <a class="start icon-switch"></a>
+                            </div>
+                            <div class="account-tab-switch-text">
+                                <span class="quick">扫码登录</span>
+                                <span class="start">短信登录／注册</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-tabcon-start">
+                        <div class="account-form">
+                            <div class="account-form-tips">请仔细阅读 <a target="_blank" href="#">豆瓣使用协议、隐私政策</a></div>
+                            <div class="account-form-error"><span class="hide"></span></div>
+
+                            <div class="account-form-raw">
+                                <label class="account-form-label">手机号：</label>
+                                <div class="account-form-field account-form-field-phone">
+                                    <span class="icon clear-input hide"></span>
+                                    <input type="phone" name="phone" maxlength="13" class="account-form-input"
+                                        placeholder="手机号" tabindex="1">
+                                    <div class="account-form-field-area-code">
+                                        <div class="account-form-field-area-code-label js-choose-district">+86</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nation-select hide"></div>
+
+
+                            <div class="account-form-raw">
+                                <label class="account-form-label">验证码：</label>
+                                <div class="account-form-field account-form-codes">
+                                    <input id="code" type="text" name="code" maxlength="6" class="account-form-input"
+                                        placeholder="验证码" tabindex="2" autocomplete="off">
+                                    <div class="account-form-field-code">
+                                        <a href="javascript:;">获取验证码</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="account-form-field-submit ">
+                                <a href="javascript:;" class="btn btn-phone">登录豆瓣</a>
+                            </div>
+
+                        </div>
+                        <div class="account-form-ft">
+                            <p class="account-form-link"><a class="help-link" target="_blank"
+                                    data-action="login_phone_nocode" href="#">收不到验证码</a></p>
+                            <p class="account-form-remember">
+                                <input name="remember" type="checkbox" id="account-form-remember" tabindex="4"><label
+                                    for="account-form-remember">下次自动登录</label>
+                            </p>
+                        </div>
+                        <div class="account-form-3rd account-form-3rd-anonymous">
+                            <div class="account-form-3rd-hd">第三方登录: </div>
+                            <div class="account-form-3rd-bd">
+
+                                <a href="#" class="link-3rd-wx link-3rd-wx-on" target="_top" title="用微信登录">wechat</a>
+                                <a href="#" class="link-3rd-wb link-3rd-wb-on" target="_top" title="用微博登录">weibo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-tabcon-quick account-quick">
+                        <div class="account-qr-code">
+                            <div class="account-qr-scan">
+                                加载中...
+                            </div>
+                            <div class="account-qr-text">
+                                请打开豆瓣客户端扫一扫
+                            </div>
+                            <div class="account-qr-fail hide">
+                                <span>登录失败</span>
+                                <a href="javascript:;" class="btn btn-refresh account-qr-refresh">点击刷新</a>
+                            </div>
+                        </div>
+                        <div class="account-qr-success hide">
+                            <div class="account-qr-success-hd">扫描成功！</div>
+                            <div class="account-qr-success-bd">
+                                <div class="account-qr-success-bd-text">请在手机上确认登录</div>
+                                <div class="account-qr-success-bd-pic"></div>
+                                <div class="account-qr-success-bd-link">
+                                    <a href="javascript:;">返回二维码登录</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-qr-link">
+                            <a href="javascript:;" class="link-phone">短信登录/注册</a>
+                            <span>|</span>
+                            <a href="javascript:;" class="link-account">密码登录</a>
+                        </div>
+                    </div>
+                    <div class="captcha-error hide fixed">登录出现问题，<a href="javascript:window.location.reload()"
+                            data-action="captch_error">反馈并刷新</a></div>
+                </div>
+                <div class="app">
+                    <p class="app-title">豆瓣<span>6.0</span></p>
+                    <p class="app-slogan"></p>
+                    <a href="https://www.douban.com/doubanapp/app?channel=nimingye" class="lnk-app">下载豆瓣 App</a>
+                    <div class="app-qr">
+                        <a href="javascript: void 0;" class="lnk-qr" id="expand-qr"><img
+                                src="https://img3.doubanio.com/f/sns/0c708de69ce692883c1310053c5748c538938cb0/pics/sns/anony_home/icon_qrcode_green.png"
+                                width="28" height="28"></a>
+                        <div class="app-qr-expand">
+                            <img src="https://img3.doubanio.com/f/sns/1cad523e614ec4ecb6bf91b054436bb79098a958/pics/sns/anony_home/doubanapp_qrcode.png"
+                                width="160" height="160">
+                            <p>iOS / Android 扫码直接下载</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script></script>
+        </div>
+
+        <!-- 热点内容 -->
+        <div id="anony-sns" class="section">
+            <div class="wrapper">
+                <!-- douban ad begin -->
+                <div id="dale_anonymous_homepage_top_for_crazy_ad" ad-status="loaded"></div>
+                <!-- douban ad end -->
+                <div class="side">
+                    <div class="online">
+                        <ul>
+                            <div class="mod">
+
+                                <h2>
+                                    热门话题
+                                    &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+                                    <span class="pl">&nbsp;(
+
+                                        <a href="/gallery/" target="_self">去话题广场</a>
+                                        ) </span>
+                                </h2>
+                                <ul>
+                                    <li class="rec_topics">
+                                        <a href="h#" class="rec_topics_name">最爱的一种雨</a>
+
+                                        <span class="rec_topics_subtitle">57.1万次浏览</span>
+                                    </li>
+                                    <li class="rec_topics">
+                                        <a href="#" class="rec_topics_name">书店窃读记</a>
+
+                                        <span class="rec_topics_subtitle">29.1万次浏览</span>
+                                    </li>
+                                    <li class="rec_topics">
+                                        <a href="#" class="rec_topics_name">我的2020毕业“寄”</a>
+
+                                        <span class="rec_topics_subtitle">22.7万次浏览</span>
+                                    </li>
+                                    <li class="rec_topics">
+                                        <a href="#" class="rec_topics_name">看展记</a>
+
+                                        <span class="rec_topics_subtitle">2238.2万次浏览</span>
+                                    </li>
+                                    <li class="rec_topics">
+                                        <a href="#" class="rec_topics_name">你从父母的婚姻中得到了哪些启示？</a>
+
+                                        <span class="rec_topics_subtitle">77.6万次浏览</span>
+                                    </li>
+                                    <li class="rec_topics">
+                                        <a href="#" class="rec_topics_name">你想和高考那年的自己说什么</a>
+
+                                        <span class="rec_topics_subtitle">110.8万次浏览</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- douban ad begin -->
+                            <li>
+                                <div id="dale_homepage_online_activity_promo_1" ad-status="loaded"></div>
+                            </li>
+                            <li>
+                                <div id="dale_anonymous_homepage_doublemint" ad-status="loaded"></div>
+                            </li>
+                            <!-- douban ad end -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="mod">
+
+
+                        <h2>
+                            热点内容
+                            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+                            <span class="pl">&nbsp;(
+
+                                <a href="#" target="_self">更多</a>
+                                ) </span>
+                        </h2>
+
+                        <div class="albums">
+                            <ul>
+                                <li>
+                                    <div class="pic">
+                                        <a href="#"><img
+                                                src="https://img9.doubanio.com/view/photo/albumcover/public/p2562387924.webp"
+                                                data-origin="https://img9.doubanio.com/view/photo/albumcover/public/p2562387924.webp"
+                                                alt=""></a>
+                                    </div>
+                                    <a href="#">废墟 | “和大自然融为一体的房间”——迷失宫殿</a>
+                                    <span class="num">58张照片</span>
+                                </li>
+                                <li>
+                                    <div class="pic">
+                                        <a href="#"><img
+                                                src="https://img1.doubanio.com/view/photo/albumcover/public/p2534644818.webp"
+                                                data-origin="https://img1.doubanio.com/view/photo/albumcover/public/p2534644818.webp"
+                                                alt=""></a>
+                                    </div>
+                                    <a href="#">漂流丘比</a>
+                                    <span class="num">19张照片</span>
+                                </li>
+                                <li>
+                                    <div class="pic">
+                                        <a href="#"><img
+                                                src="https://img3.doubanio.com/view/photo/albumcover/public/p2535888193.webp"
+                                                data-origin="https://img3.doubanio.com/view/photo/albumcover/public/p2535888193.webp"
+                                                alt=""></a>
+                                    </div>
+                                    <a href="#">「墟墓之間」──華東</a>
+                                    <span class="num">167张照片</span>
+                                </li>
+                                <li>
+                                    <div class="pic">
+                                        <a href="#"><img
+                                                src="https://img3.doubanio.com/view/photo/albumcover/public/p2275271473.webp"
+                                                data-origin="https://img3.doubanio.com/view/photo/albumcover/public/p2275271473.webp"
+                                                alt=""></a>
+                                    </div>
+                                    <a href="#">姥爷的诗</a>
+                                    <span class="num">19张照片</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="notes">
+                            <ul>
+                                <li class="first">
+                                    <div class="title">
+                                        <a href="#">探访达里尼</a>
+                                    </div>
+                                    <div class="author">
+                                        蛐蛐的日记
+                                    </div>
+                                    <p>先前说过，大连是座圆形的城市，这个圆的圆心，就在今天的中山广场。100年前，它叫...</p>
+                                </li>
+
+                                <li><a href="#">母女关系进化论：两个女人之间的战争史</a></li>
+                                <li><a href="#">探访旅顺口</a></li>
+                                <li><a href="#">我养龟十年了</a></li>
+                                <li><a href="#">论母亲与父亲的叙事风格</a></li>
+                                <li><a href="#">家 有 老 母 谢 飞</a></li>
+                                <li><a href="#">河内的铁道旅行：一条网红铁路，一座钢架大桥</a></li>
+                                <li><a href="#">胖纸G的日本爬楼小记（上）——首都圈篇</a></li>
+                                <li><a href="#">端午节西北之行游记</a></li>
+                                <li><a href="#">不用PS，有了这份 snapseed 超强使用指南分分钟修大片</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- 豆瓣时间 -->
+        <div id="anony-time" class="section">
+            <div class="wrapper">
+                <div class="sidenav">
+                    <h2 class="section-title"><a href="#">豆瓣时间</a></h2>
+                </div>
+                <div class="side"></div>
+                <div class="main">
+                    <h2>
+                        热门专栏
+                        ······
+                        <span class="pl">&nbsp;(
+
+                            <a href="#" target="_self">更多</a>
+                            ) </span>
+                    </h2>
+                    <ul class="time-list">
+                        <li>
+
+                            <a class="cover audio new " href="#" target="_blank">
+                                <img src="https://img1.doubanio.com/dae/niffler/niffler/images/2c714636-c0e3-11ea-be04-ca23268eb119.jpg"
+                                    alt="复旦沈奕斐的社会学爱情思维课">
+                            </a>
+                            <a class="title" href="#" target="_blank">复旦沈奕斐的社会学爱情思维课</a>
+                            <span class="type">音频专栏</span>
+                        </li>
+                        <li>
+
+                            <a class="cover audio new " href="#" target="_blank">
+                                <img src="https://img3.doubanio.com/dae/niffler/niffler/images/04fcbc08-bb51-11ea-bbd3-6ab7ab463cde.png"
+                                    alt="你好呀！日本——58个关键词凝视日本古今">
+                            </a>
+                            <a class="title" href="#" target="_blank">你好呀！日本——58个关键词凝视日本古今</a>
+                            <span class="type">音频专栏</span>
+                        </li>
+                        <li>
+
+                            <a class="cover video new " href="#" target="_blank">
+                                <img src="https://img1.doubanio.com/dae/niffler/niffler/images/91bc2e6e-b43d-11ea-9a35-d2d7f8baec3a.png"
+                                    alt="怦然心动的瞬间----14堂餐桌美学课">
+                            </a>
+                            <a class="title" href="#" target="_blank">怦然心动的瞬间----14堂餐桌美学课</a>
+                            <span class="type">视频专栏</span>
+                        </li>
+                        <li>
+
+                            <a class="cover audio  new" href="#" target="_blank">
+                                <img src="https://img1.doubanio.com/dae/niffler/niffler/images/fbcd1ec2-b112-11ea-909d-d2d7f8baec3a.png"
+                                    alt="一切美好的事物都与你有关——21天走出低自尊">
+                            </a>
+                            <a class="title" href="#" target="_blank">一切美好的事物都与你有关——21天走出低自尊</a>
+                            <span class="type">音频专栏</span>
+                        </li>
+                        <li>
+
+                            <a class="cover audio new " href="#" target="_blank">
+                                <img src="https://img3.doubanio.com/dae/niffler/niffler/images/7b986048-9f1c-11ea-8b53-6e94b03bf1e1.jpg"
+                                    alt="童话交响梦——古典音乐这样听">
+                            </a>
+                            <a class="title" href="#" target="_blank">童话交响梦——古典音乐这样听</a>
+                            <span class="type">音频专栏</span>
+                        </li>
+                        <li>
+
+                            <a class="cover video new " href="#" target="_blank">
+                                <img src="https://img1.doubanio.com/dae/niffler/niffler/images/ffb879fe-91d3-11ea-ac42-de2223cd0c89.jpg"
+                                    alt="简食知味——20道全生素食料理课">
+                            </a>
+                            <a class="title" href="#" target="_blank">简食知味——20道全生素食料理课</a>
+                            <span class="type">视频专栏</span>
+                        </li>
+                        <li>
+
+                            <a class="cover audio new " href="#" target="_blank">
+                                <img src="https://img3.doubanio.com/dae/niffler/niffler/images/c1a3cfde-8543-11ea-a58d-5aaa293ef1e1.jpg"
+                                    alt="人心可测——姜振宇的微表情读心术">
+                            </a>
+                            <a class="title" href="#" target="_blank">人心可测——姜振宇的微表情读心术</a>
+                            <span class="type">音频专栏</span>
+                        </li>
+                        <li>
+
+                            <a class="cover audio new " href="#" target="_blank">
+                                <img src="https://img1.doubanio.com/dae/niffler/niffler/images/6cf22398-757e-11ea-8774-fea672b52f7a.jpg"
+                                    alt="生死之间：10堂课学会如何与疾病共处">
+                            </a>
+                            <a class="title" href="#" target="_blank">生死之间：10堂课学会如何与疾病共处</a>
+                            <span class="type">音频专栏</span>
+                        </li>
+                        <li>
+
+                            <a class="cover audio new " href="#" target="_blank">
+                                <img src="https://img3.doubanio.com/dae/niffler/niffler/images/eb08fc6c-7348-11ea-afb6-5a5bcc9605bf.jpg"
+                                    alt="爱我，请先懂我——纽约大学艺术治疗师的儿童心理成长课">
+                            </a>
+                            <a class="title" href="#" target="_blank">爱我，请先懂我——纽约大学艺术治疗师的儿童心理成长课</a>
+                            <span class="type">音频专栏</span>
+                        </li>
+                        <li>
+
+                            <a class="cover audio new " href="#" target="_blank">
+                                <img src="https://img1.doubanio.com/dae/niffler/niffler/images/7df08276-6cea-11ea-b1b3-fea672b52f7a.jpg"
+                                    alt="罪恶的背后——人人必修的60堂犯罪心理学">
+                            </a>
+                            <a class="title" href="#" target="_blank">罪恶的背后——人人必修的60堂犯罪心理学</a>
+                            <span class="type">音频专栏</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 电影 -->
+        <div id="anony-movie" class="section">
+            <div class="wrapper">
+
+
+                <div class="sidenav">
+                    <h2 class="section-title"><a href="https://movie.douban.com">电影</a></h2>
+                    <div class="side-links nav-anon">
+                        <ul>
+                            <li><a href="#">影讯&amp;购票</a></li>
+
+                            <li class="site-nav-bt">
+                                <a href="#">选电影</a>
+                                <img style="top: -5px; position: relative;"
+                                    src="https://img3.doubanio.com/pics/new_menu.gif">
+                            </li>
+                            <li><a href="#">电视剧</a></li>
+                            <li><a href="#">排行榜</a></li>
+                            <li><a href="#">分类</a></li>
+                            <li><a href="#">影评</a></li>
+                            <li class="site-nav-bt"><a href="#">预告片</a></li>
+                            <li><a href="#">问答</a></li>
+                        </ul>
+                    </div>
+                    <div class="apps-list">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+                <div class="side">
+                    <div class="mod">
+                        <h2>
+                            影片分类
+                            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+                            <span class="pl">&nbsp;(
+
+                                <a href="#" target="_self">更多</a>
+                                ) </span>
+                        </h2>
+                        <div class="tags list">
+                            <ul>
+                                <li><a href="#">爱情</a></li>
+                                <li><a href="#">剧情</a></li>
+                                <li><a href="#">喜剧</a></li>
+                                <li><a href="#">动画</a></li>
+                                <li><a href="#">经典</a></li>
+                                <li><a href="#">科幻</a></li>
+                                <li><a href="#">悬疑</a></li>
+                                <li><a href="#">动作</a></li>
+                                <li><a href="#">犯罪</a></li>
+                                <li><a href="#">青春</a></li>
+                                <li><a href="#">搞笑</a></li>
+                                <li><a href="#">文艺</a></li>
+                                <li><a href="#">惊悚</a></li>
+                                <li><a href="#">励志</a></li>
+                                <li><a href="#">纪录片</a></li>
+                                <li><a href="#">黑色幽默</a></li>
+                                <li><a href="#">战争</a></li>
+                                <li><a href="#">恐怖</a></li>
+                                <li><a href="#">美国</a></li>
+                                <li><a href="#">日本</a></li>
+                                <li><a href="#">香港</a></li>
+                                <li><a href="#">韩国</a></li>
+                                <li><a href="#">中国大陆</a></li>
+                                <li><a href="#">中国</a></li>
+                                <li><a href="#">英国</a></li>
+                                <li><a href="#">法国</a></li>
+                                <li><a href="#">台湾</a></li>
+                                <li><a href="#">印度</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mod">
+                        <h2>
+                            近期热门
+                            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+                            <span class="pl">&nbsp;(
+
+                                <a href="#" target="_self">更多</a>
+                                ) </span>
+                        </h2>
+                        <div class="list1 movie-charts">
+                            <ol>
+                                <li>
+                                    <a href="#">汉密尔顿</a>
+                                </li>
+                                <li>
+                                    <a href="#">灰猎犬号</a>
+                                </li>
+                                <li>
+                                    <a href="#">永生守卫</a>
+                                </li>
+                                <li>
+                                    <a href="#">好久不见，武汉</a>
+                                </li>
+                                <li>
+                                    <a href="#">猎谎者</a>
+                                </li>
+                                <li>
+                                    <a href="#">侵入者</a>
+                                </li>
+                                <li>
+                                    <a href="#">咱们裸熊：电影版</a>
+                                </li>
+                                <li>
+                                    <a href="#">翻译疑云</a>
+                                </li>
+                                <li>
+                                    <a href="#">前哨</a>
+                                </li>
+                                <li>
+                                    <a href="#">想哭的我戴上了猫的面具</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="main">
+                    <h2>
+                        正在热映
+                        &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+                        <span class="pl">&nbsp;(
+                            <a href="#" target="_self">更多</a>
+                            ) </span>
+                    </h2>
+                    <div class="movie-list list">
+                        <ul>
+                            <li>
+                                <div class="pic">
+                                    <a href="#"><img
+                                            src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2575325937.webp"
+                                            data-origin="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2575325937.webp"
+                                            alt="小妇人"></a>
+                                </div>
+                                <div class="title">
+                                    <a href="#">小妇人</a>
+                                </div>
+                                <div class="rating">
+                                    <span class="allstar40"></span><i>8.1</i>
+                                </div>
+                                <a href="#" class="bn-link bn-ticket">选座购票</a>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <a href="#"><img
+                                            src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2578705064.webp"
+                                            data-origin="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2578705064.webp"
+                                            alt="理查德·朱维尔的哀歌"></a>
+                                </div>
+                                <div class="title">
+                                    <a href="#">理查德·朱维尔...</a>
+                                </div>
+                                <div class="rating">
+                                    <span class="allstar45"></span><i>8.2</i>
+                                </div>
+                                <a href="#" class="bn-link bn-ticket">选座购票</a>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <a href="#"><img
+                                            src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2577340942.webp"
+                                            data-origin="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2577340942.webp"
+                                            alt="变身特工"></a>
+                                </div>
+                                <div class="title">
+                                    <a href="#">变身特工</a>
+                                </div>
+                                <div class="rating">
+                                    <span class="allstar40"></span><i>7.5</i>
+                                </div>
+                                <a href="#" class="bn-link bn-ticket">选座购票</a>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <a href="#"><img
+                                            src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2578722076.webp"
+                                            data-origin="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2578722076.webp"
+                                            alt="紫罗兰永恒花园外传：永远与自动手记人偶"></a>
+                                </div>
+                                <div class="title">
+                                    <a href="#">紫罗兰永恒花园...</a>
+                                </div>
+                                <div class="rating">
+                                    <span class="allstar40"></span><i>7.5</i>
+                                </div>
+                                <a href="#" class="bn-link bn-ticket">选座购票</a>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <a href="#"><img
+                                            src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2578721161.webp"
+                                            data-origin="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2578721161.webp"
+                                            alt="鲨海逃生"></a>
+                                </div>
+                                <div class="title">
+                                    <a href="#">鲨海逃生</a>
+                                </div>
+                                <div class="rating">
+                                    <span class="allstar25"></span><i>5.1</i>
+                                </div>
+                                <a href="#" class="bn-link bn-ticket">选座购票</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="dale_anonymous_homepage_movie_bottom" class="extra" ad-status="loaded"></div>
         </div>
     </div>
 </body>

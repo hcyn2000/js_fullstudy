@@ -4,69 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>js瀑布流</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
 
+        #container {
+            position: relative;
+            /* position: absolute; */
+        }
+
+        .box {
+            padding: 5px;
+            float: left;
+        }
+
+        .box-img {
+            width: 150px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            box-sizing: 0 0 5px #ccc;
+            border-radius: 5px;
+        }
+
+        .box-img img {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div id="container">
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/1.jpg" alt="">
             </div>
         </div>
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/2.jpg" alt="">
             </div>
         </div>
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/3.jpg" alt="">
             </div>
         </div>
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/4.jpg" alt="">
             </div>
         </div>
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/5.jpg" alt="">
             </div>
         </div>
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/6.jpg" alt="">
             </div>
         </div>
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/7.jpg" alt="">
             </div>
         </div>
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/8.jpg" alt="">
             </div>
         </div>
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/9.jpg" alt="">
             </div>
         </div>
         <div class="box">
-            <div>
+            <div class="box-img">
                 <img src="./images/10.jpg" alt="">
             </div>
         </div>
+        <div class="box">
+            <div class="box-img">
+                <img src="./images/11.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-img">
+                <img src="./images/12.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-img">
+                <img src="./images/13.jpg" alt="">
+            </div>
+        </div>
     </div>
+    <script src="./waterfall.js"></script>
 </body>
 
 </html>

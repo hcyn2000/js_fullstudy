@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-size: 20px;
+}
+ul li {
+  list-style: none;
+}
+section {
+  margin-bottom: 0.667rem;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card {
+  padding: 1rem;
+  background: #f5fafe;
+}
+.card-wrapper {
+  width: 100%;
+}
+.card-wrapper .user-info {
+  width: 100%;
+  font-size: 0;
+}
+.card-wrapper .user-info__pic {
+  height: 12rem;
+  width: 100%;
+}
+.card-wrapper .user-info__pic img {
+  height: 100%;
+  width: 100%;
+}
+.card-wrapper .user-info__desc {
+  padding: 0.333rem 0.667rem;
+}
+.card-wrapper .user-info__desc .name {
+  font-size: 1rem;
+  color: #010101;
+}
+.card-wrapper .user-info__desc .name .sex {
+  width: 1rem;
+  height: 0.9rem;
+  display: inline-block;
+  background-image: url("./img/sex_man.png");
+  background-size: contain;
+}
+.card-wrapper .user-info__desc .character-xg {
+  font-size: 0.666rem;
+  overflow: hidden;
+}
+.card-wrapper .user-info__desc .character-xg li {
+  border-radius: 5px;
+  margin: 0.666rem 0;
+  float: left;
+  color: #fff;
+  padding: 0.333rem 0.666rem;
+  margin-right: 0.6rem;
+}
+.card-wrapper .user-info__desc .character-xg .optimistic {
+  background-color: #48a6fd;
+}
+.card-wrapper .user-info__desc .character-xg .occupation {
+  background-color: #1dca42;
+}
+.card-wrapper .user-info__desc .character-xg .Toss {
+  background-color: #fb8800;
+}
+.card-wrapper .user-info__desc .information-xx {
+  font-size: 0.666rem;
+}
+.card-wrapper .user-info__desc .information-xx li {
+  margin-right: 1.25rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  color: #adadad;
+  float: left;
+}
+.card-wrapper .user-info__desc .information-xx li em {
+  font-size: 0;
+  margin-right: 0.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: inline-block;
+  background-size: contain;
+  vertical-align: middle;
+}
+.card-wrapper .user-info__desc .information-xx li em img {
+  width: 100%;
+}
