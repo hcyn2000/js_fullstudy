@@ -73,11 +73,11 @@ section {
   font-size: 0.666rem;
 }
 .card-wrapper .user-info__desc .information-xx li {
-  margin-right: 1.25rem;
   height: 1.5rem;
   line-height: 1.5rem;
   color: #adadad;
   float: left;
+  width: 7rem;
 }
 .card-wrapper .user-info__desc .information-xx li em {
   font-size: 0;
