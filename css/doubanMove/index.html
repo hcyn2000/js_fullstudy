@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豆瓣</title>
+    <link rel="stylesheet" href="douban.css">
+</head>
+
+<body ontouchstart>
+    <div id="TalionNav">
+        <header class="TalionNav feedly">
+            <div class="TalionNav-primary-wrap">
+                <div class="TalionNav-primary"><a href="#" class="logo">
+                        <h1 style="font-size: 0px;">豆瓣</h1>
+                    </a>
+                    <form action="/search" class="search-box" method="GET"><input class="search-input" name="query"
+                            type="search" placeholder="搜索"></form>
+                    <div class="nav-btns"><a class="nav-btn-item to_pc" href="#"></a></div>
+                </div>
+                <div class="TalionNav-static"><a href="#" class="icon-wrap"><img
+                            src="https://img3.doubanio.com/f/frodo/144e6fb7d96701944e7dbb1a9bad51bdb1debe29/pics/app/logo.png"
+                            class="icon" alt="douban icon"></a><a class="info" href="#">
+                        <h2>豆瓣<span>App</span></h2>
+                        <p>记录你的书影音生活</p>
+                    </a><a href="#" class="btn green">打开App</a></div>
+            </div>
+        </header>
+    </div>
+    <div class="page">
+        <div class="subject-header-wrap" id="subject-header-container" style="background-color: rgb(60, 69, 76);">
+            <div class="sub-info">
+                <a class="sub-cover" href="#">
+                    <img src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2591289975.webp">
+                    <span class="cover-count">99+</span>
+                </a>
+                <div class="sub-detail dark_bg">
+                    <div class="sub-title">灰猎犬号</div>
+                    <div class="sub-original-title">Greyhound（2020）</div>
+
+                    <div id="subject-honor-root"><a data-reactroot="" href="#" class="sub-honor"><span
+                                class="info-rank">No.3</span><span class="info-scope">一周口碑电影榜</span></a></div>
+                    <div class="sub-meta">
+                        美国 / 剧情 / 战争 / 2020-07-10(美国)上映 / 片长91分钟
+                    </div>
+                    <section class="subject-mark mark-movie" data-type="movie" data-id="26871906">
+                        <div class="mark-item" data="">
+                            <a href="javascript:;" rel="nofollow" name="pbtn-26871906-wish" class="">
+                                <i class="wish icon"></i>
+                                <span>想看</span>
+                            </a>
+                            <a href="javascript:;" rel="nofollow" name="pbtn-26871906-collect">
+                                <i class="done icon"></i>
+                                <span>看过</span>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div id="subject-rating-root">
+                <div data-reactroot="" class="sub-score">
+                    <div class="sub-trademark"><span>豆瓣评分<em>TM</em></span><a href="#"
+                            class="score-write"><span>打开App评分</span></a></div>
+                    <div class="sub-content">
+                        <div class="sub-rating">
+                            <div class="score-num">8.3</div>
+                            <div class="star-display">
+                                <div class="rating">
+                                    <div class="rating-stars"><span class="rating-star rating-star-medium-full"
+                                            data-star-count="1"></span><span class="rating-star rating-star-medium-full"
+                                            data-star-count="2"></span><span class="rating-star rating-star-medium-full"
+                                            data-star-count="3"></span><span class="rating-star rating-star-medium-full"
+                                            data-star-count="4"></span><span class="rating-star rating-star-medium-half"
+                                            data-star-count="5"></span></div>
+                                </div>
+                                <p class="done-count"><em>27505人评分</em></p>
+                            </div>
+                        </div>
+                        <div class="sub-chart">
+                            <div class="star-stats">
+                                <div class="stars-wrap"><span class="rating-star-icon"></span><span
+                                        class="rating-star-icon"></span><span class="rating-star-icon"></span><span
+                                        class="rating-star-icon"></span><span class="rating-star-icon"></span></div>
+                                <div class="chart-wrap"><span class="rating-progress" style="width: 31.8%;"></span>
+                                </div>
+                            </div>
+                            <div class="star-stats">
+                                <div class="stars-wrap"><span class="rating-star-icon"></span><span
+                                        class="rating-star-icon"></span><span class="rating-star-icon"></span><span
+                                        class="rating-star-icon"></span></div>
+                                <div class="chart-wrap"><span class="rating-progress" style="width: 51%;"></span></div>
+                            </div>
+                            <div class="star-stats">
+                                <div class="stars-wrap"><span class="rating-star-icon"></span><span
+                                        class="rating-star-icon"></span class=><span class="rating-star-icon"></span>
+                                </div>
+                                <div class="chart-wrap"><span class="rating-progress" style="width: 15.8%;"></span>
+                                </div>
+                            </div>
+                            <div class="star-stats">
+                                <div class="stars-wrap"><span class="rating-star-icon"></span><span
+                                        class="rating-star-icon"></span class=></div>
+                                <div class="chart-wrap"><span class="rating-progress" style="width: 1.1%;"></span></div>
+                            </div>
+                            <div class="star-stats">
+                                <div class="stars-wrap"><span class="rating-star-icon"></span></div>
+                                <div class="chart-wrap"><span class="rating-progress" style="width: 0.3%;"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-vendor">
+                <i class="play-icon grey-icon"></i>
+                <span class="vendor-text">
+                    即将可播
+                </span>
+                <a href="#" rel="nofollow" onclick="ga('send', 'event', 'ios', 'click', 'card more link')">
+                    <span class="vendor-go-app">
+                        在豆瓣App打开上架提醒
+                    </span>
+                </a>
+
+            </div>
+        </div>
+        <div class="subject-banner">
+            <a href="#" rel="nofollow" onclick="ga('send', 'event', 'ios', 'click', 'card more link')">
+                <img
+                    src="https://img3.doubanio.com/f/talion/bbb14f6dc581d8fb2a22cf5a2697a5dd9220d3fc/pics/card/download_app_banner.png">
+            </a>
+        </div>
+        <div class="card">
+            <input id="user" type="hidden" value="">
+            <section class="subject-intro">
+                <h2>
+                    剧情简介</h2>
+                <div class="bd" style="position: static;">
+                    <p data-clamp="3" data-content="
+                影片讲述二战初期，由37支盟军船只组成的护航舰队在欧内斯特·克劳斯（汤姆·汉克斯饰）舰长率领的一艘美国驱逐舰指挥下，穿越险恶的北大西洋，同时还要与德国U型潜艇狼群的周旋。">
+                        影片讲述二战初期，由37支盟军船只组成的护航舰队在欧内斯特·克劳斯（汤姆·汉克斯饰）舰长率领的一艘美国驱逐舰指挥下，穿越险恶的北大...<a class="expand"
+                            href="javascript:;" style="float:right;">展开</a></p>
+                </div>
+            </section>
+            <section class="" id="celebrities">
+                <header>
+                    <h2>演职员</h2>
+                </header>
+                <div class="section-content">
+                    <ul class="row items movie-celebrities">
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1507471180.85.jpg)">
+                                </div>
+                                <span class="item-title name">亚伦·施耐德</span>
+                                <span class="item-title role">导演</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p28603.jpg)">
+                                </div>
+                                <span class="item-title name">汤姆·汉克斯</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p7770.jpg)">
+                                </div>
+                                <span class="item-title name">斯蒂芬·格拉汉姆</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1360940692.64.jpg)">
+                                </div>
+                                <span class="item-title name">伊丽莎白·苏</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1388496467.57.jpg)">
+                                </div>
+                                <span class="item-title name">迈克尔·本茨</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1469431557.49.jpg)">
+                                </div>
+                                <span class="item-title name">罗布·摩根</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1508392607.67.jpg)">
+                                </div>
+                                <span class="item-title name">大卫·马尔登那多</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1594608679.51.jpg)">
+                                </div>
+                                <span class="item-title name">吉米·坦顿</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1594608803.12.jpg)">
+                                </div>
+                                <span class="item-title name">马特·赫尔姆</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1572827773.3.jpg)">
+                                </div>
+                                <span class="item-title name">汤姆·布里特尼</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1576515899.9.jpg)">
+                                </div>
+                                <span class="item-title name">曼努埃尔·加西亚-鲁尔福</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1594895312.56.jpg)">
+                                </div>
+                                <span class="item-title name">特拉维斯·普里兹比尔斯基</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1594608911.56.jpg)">
+                                </div>
+                                <span class="item-title name">杰里米·丹尼尔·麦登</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1529722396.24.jpg)">
+                                </div>
+                                <span class="item-title name">戴文·德鲁伊</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1594895359.96.jpg)">
+                                </div>
+                                <span class="item-title name">特拉维斯·昆汀</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1502876635.54.jpg)">
+                                </div>
+                                <span class="item-title name">威尔·普伦</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1549901503.21.jpg)">
+                                </div>
+                                <span class="item-title name">乔什·维金斯</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1555386934.69.jpg)">
+                                </div>
+                                <span class="item-title name">迈克尔·卡罗洛</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1555386812.62.jpg)">
+                                </div>
+                                <span class="item-title name">凯莱布·J·塔格德</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/pAGX26pKGkBYcel_avatar_uploaded1454597255.83.jpg)">
+                                </div>
+                                <span class="item-title name">格雷森·拉塞尔</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1555386871.02.jpg)">
+                                </div>
+                                <span class="item-title name">杰夫·阿德勒</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/pMvGo8n4rnBocel_avatar_uploaded1516086281.18.jpg)">
+                                </div>
+                                <span class="item-title name">戴夫·戴维斯</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1393775520.95.jpg)">
+                                </div>
+                                <span class="item-title name">李·诺里斯</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1440342242.95.jpg)">
+                                </div>
+                                <span class="item-title name">切特·汉克斯</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1521910645.86.jpg)">
+                                </div>
+                                <span class="item-title name">卡尔·格洛斯曼</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1550803134.33.jpg)">
+                                </div>
+                                <span class="item-title name">马修·祖克</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1547003178.52.jpg)">
+                                </div>
+                                <span class="item-title name">B·马丁·威廉姆斯</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1462625097.16.jpg)">
+                                </div>
+                                <span class="item-title name">乔恩·多纳休</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1532849079.58.jpg)">
+                                </div>
+                                <span class="item-title name">伊恩·詹姆斯·科里特</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1558083881.65.jpg)">
+                                </div>
+                                <span class="item-title name">马克西米利安·奥辛斯基</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p2375.jpg)">
+                                </div>
+                                <span class="item-title name">托马斯·克莱舒曼</span>
+                                <span class="item-title role">演员</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p28603.jpg)">
+                                </div>
+                                <span class="item-title name">汤姆·汉克斯</span>
+                                <span class="item-title role">编剧</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img9.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1424869272.64.jpg)">
+                                </div>
+                                <span class="item-title name">C·S·福里斯特</span>
+                                <span class="item-title role">编剧</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p28603.jpg)">
+                                </div>
+                                <span class="item-title name">汤姆·汉克斯</span>
+                                <span class="item-title role">制片人</span>
+                            </a>
+                        </li>
+                        <li class="item item__celebrity">
+                            <a href="#">
+                                <div class="item-poster"
+                                    style="background-image: url(https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p16933.jpg)">
+                                </div>
+                                <span class="item-title name">韩三平</span>
+                                <span class="item-title role">制片人</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </section>
+            <section class="subject-pics">
+                <h2>
+                    <div class="pics-title">
+                        <span>预告片</span>
+                        <span>/</span>
+                        <span>剧照</span>
+                    </div>
+                    <a href="#" rel="nofollow" onclick="ga('send', 'event', 'ios', 'click', 'card more link')">
+                        <span class="app-link">打开App查看全部预告片</span>
+                    </a>
+                </h2>
+                <div class="bd photo-list scope-movie">
+                    <ul class="wx-preview">
+                        <li class="video video-trailer" data-type="cover"
+                            style="background-image: url(&quot;https://img9.doubanio.com/img/trailer/medium/2608230135.jpg?&quot;);">
+                            <a href="#"><span><img
+                                        src="https://img3.doubanio.com/f/talion/68ff8e81492ad5ad72e57ceede8830f346dda183/pics/card/movie_play_btn.svg"
+                                        alt="灰猎犬号的预告片"></span></a>
+                            <div class="time">02:36</div>
+                        </li>
+                        <li class="pic">
+                            <a href="#">
+                                <img alt="灰猎犬号的剧照_1"
+                                    src="https://img9.doubanio.com/view/photo/s/public/p2608633115.webp">
+                            </a>
+                        </li>
+                        <li class="pic">
+                            <a href="#">
+                                <img alt="灰猎犬号的剧照_2"
+                                    src="https://img1.doubanio.com/view/photo/s/public/p2608633108.webp">
+                            </a>
+                        </li>
+                        <li class="pic">
+                            <a href="#">
+                                <img alt="灰猎犬号的剧照_3"
+                                    src="https://img3.doubanio.com/view/photo/s/public/p2608633072.webp">
+                            </a>
+                        </li>
+                        <li class="pic">
+                            <a href="#">
+                                <img alt="灰猎犬号的剧照_4"
+                                    src="https://img9.doubanio.com/view/photo/s/public/p2608633136.webp">
+                            </a>
+                        </li>
+                        <li class="pic">
+                            <a href="#">
+                                <img alt="灰猎犬号的剧照_5"
+                                    src="https://img1.doubanio.com/view/photo/s/public/p2591249097.webp">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="subject-comments">
+                <h2>
+                    短评
+                    <a class="write-comment" href="#">
+                        <i class="icon grey-pen"></i>
+                        打开App写短评
+                    </a>
+                </h2>
+                <div class="bd" id="comment-list">
+                    <div data-reactroot="">
+                        <ul class="list comment-list">
+                            <li class="">
+                                <div class="desc"><a href="#"><img
+                                            src="https://img3.doubanio.com/icon/up163070695-1.jpg" alt="凯奇"></a>
+                                    <div class="user-info">
+                                        <div class="user-name">凯奇</div><span class="rating-stars" data-rating="5"><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span></span><span
+                                            class="date">1周前</span>
+                                    </div>
+                                </div>
+                                <div class="comment-content">
+                                    <p class="LinesEllipsis  ">
+                                        五千万成本，很可能是2020年最后的院线“大片”，知足吧兄弟们，顶我上去的都是在这最艰难的疫情期间和电影患难与共的战友与兄弟!<wbr></p>
+                                </div>
+                                <div class="btn-info">
+                                    <div class="ic-btn ic-btn-like  left "><span class="text">599</span></div>
+                                    <div class="ic-btn ic-btn-more   right"></div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="desc"><a href="#"><img src="https://img9.doubanio.com/icon/up85361010-6.jpg"
+                                            alt="风雨无惧的逗比"></a>
+                                    <div class="user-info">
+                                        <div class="user-name">风雨无惧的逗比</div><span class="rating-stars"
+                                            data-rating="4"><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-gray"></span></span><span
+                                            class="date">1周前</span>
+                                    </div>
+                                </div>
+                                <div class="comment-content">
+                                    <p class="LinesEllipsis  ">
+                                        appletv自带中文字幕，为啥还要边看边翻？官翻不香么？一群人天天喊着支持正版，这时候又开始盗版资源走一波了？<wbr></p>
+                                </div>
+                                <div class="btn-info">
+                                    <div class="ic-btn ic-btn-like  left "><span class="text">155</span></div>
+                                    <div class="ic-btn ic-btn-more   right"></div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="desc"><a href="#"><img
+                                            src="https://img3.doubanio.com/icon/up164150275-1.jpg" alt="南辕北辙"></a>
+                                    <div class="user-info">
+                                        <div class="user-name">南辕北辙</div><span class="rating-stars"
+                                            data-rating="5"><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span></span><span
+                                            class="date">1周前</span>
+                                    </div>
+                                </div>
+                                <div class="comment-content">
+                                    <p class="LinesEllipsis  ">汤叔captain专业户！电影全程无尿点，值得一看<wbr></p>
+                                </div>
+                                <div class="btn-info">
+                                    <div class="ic-btn ic-btn-like  left "><span class="text">230</span></div>
+                                    <div class="ic-btn ic-btn-more   right"></div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="desc"><a href="#"><img
+                                            src="https://img1.doubanio.com/icon/up63688511-18.jpg" alt="凌睿"></a>
+                                    <div class="user-info">
+                                        <div class="user-name">凌睿</div><span class="rating-stars" data-rating="3"><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-full"></span><span
+                                                class="rating-star rating-star-medium-gray"></span><span
+                                                class="rating-star rating-star-medium-gray"></span></span><span
+                                            class="date">6天前</span>
+                                    </div>
+                                </div>
+                                <div class="comment-content">
+                                    <p class="LinesEllipsis clamped ">
+                                        汤姆·汉克斯把士兵、上尉、列车长、船长、舰长、机长、宇航员、狱警、FBI、工程师、符号专家、报社编辑、律师、制片人、玩具、<wbr><span
+                                            class="LinesEllipsis-ellipsis">... </span><span
+                                            class="LinesEllipsis-readmore" style="color: rgb(66, 189, 86);">展开</span>
+                                    </p>
+                                </div>
+                                <div class="btn-info">
+                                    <div class="ic-btn ic-btn-like  left "><span class="text">215</span></div>
+                                    <div class="ic-btn ic-btn-more   right"></div>
+                                </div>
+                            </li>
+                        </ul><a class="show-all" href="#"
+                            style="display: block; padding: 15px 0px; font-size: 15px; line-height: 21px; text-align: center;">打开App，看更多热门短评</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="bottom_ad_download show">
+            <div id="dale_tailon_movie_bottom_floating_inner" class="Advertisement" ad-status="loaded"></div>
+        </div>
+    </div>
+    <script>
+        console.log(Math.round(-1.6));
+    </script>
+</body>
+
+</html>
