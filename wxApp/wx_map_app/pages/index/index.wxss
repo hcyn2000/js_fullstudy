@@ -1,0 +1,85 @@
+.vehicle {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+}
+.che {
+  text-align: center;
+  line-height: 100rpx;
+  flex: 1;
+  color: #12ccb4;
+}
+/* .icycle {
+  color: #12ccb4;
+} */
+/* .electric {
+} */
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 530rpx;
+  width: 75rpx;
+  height: 3rpx;
+  border-bottom: 2.5px solid #12ccb4;
+
+}
+
+.bottom_area {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 400rpx;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 75rpx 45rpx 40rpx;
+  /* 不撑大盒子，只缩小自己 */
+  box-sizing: border-box;
+}
+.text1 {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  font-weight: 700;
+}
+.text2 {
+  font-size: 25rpx;
+  margin-bottom: 110rpx;
+}
+.bottom_images {
+  width: 145rpx;
+  height: 145rpx;
+  border-radius: 72.5rpx;
+  position: absolute;
+  top: 50rpx;
+  right: 40rpx;
+}
+.bottom_img {
+  width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+.btn {
+  color: #ffffff;
+  height: 90rpx;
+  line-height: 45rpx;
+  background-color: #1be5c6;
+}
+.location {
+  position: absolute;
+  right: 30rpx;
+  bottom: 425rpx;
+  width: 70rpx;
+  height: 70rpx;
+  background-color: #fff;
+  display:flex;
+  justify-content: center;        
+  align-items:center;
+  border-radius: 35rpx;
+}
+.location_img {
+  width: 70%;
+  height: 70%;
+  object-fit:cover;
+}

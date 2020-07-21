@@ -1,0 +1,39 @@
+<view class="MapForcCar">
+  <map id="map" longitude="115.968706" latitude="28.688839" scale="14" controls="{{controls}}"
+    bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}"
+    bindregionchange="regionchange" show-location style="width: 100%; height: 100vh;">
+
+
+    <!-- <cover-view class="top_switch" scroll-top="0"> -->
+    <cover-view class="vehicle">
+      <cover-view class="che" style="color:  {{electric ? '#2f2f2f' : '#12ccb4'}}" bindtap="changeTab1">
+        单车
+      </cover-view>
+      <cover-view class="che" style="color:  {{electric ? '#12ccb4' : '#2f2f2f'}}" bindtap="changeTab2">
+        电单车
+      </cover-view>
+      <cover-view class="line" style="left: {{electric ? '260px' : '73px'}};"></cover-view>
+    </cover-view>
+    <!-- </cover-view> -->
+
+
+    <cover-view class="bottom_area">
+      <cover-view class="bottom_area_text">
+        <cover-view class="text1">
+          遵守交规 安全骑行
+        </cover-view>
+        <cover-view class="text2">
+          骑行时请遵守交通规则，注意安全骑行
+        </cover-view>
+      </cover-view>
+      <cover-view class="bottom_images">
+        <cover-image class="bottom_img" src="../../image/ditu.jpg">
+        </cover-image>
+      </cover-view>
+      <button class="btn" style="width: 100%;">扫码用车</button>
+    </cover-view>
+    <cover-view class="location">
+      <cover-image class="location_img" src="../../image/dingWei.png"></cover-image>
+    </cover-view>
+  </map>
+</view>

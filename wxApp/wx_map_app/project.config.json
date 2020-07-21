@@ -31,9 +31,9 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.12.0",
 	"appid": "wx28853233e9d242f1",
-	"projectname": "english-learn",
+	"projectname": "wx_map_app",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
