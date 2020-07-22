@@ -1,3 +1,4 @@
+
 // var name = "张三"
 // var obj = {}
 // console.log(name);
@@ -39,11 +40,34 @@
 // }
 
 
-var a = 'a'
-var a = 'aa'
-console.log(a);
+// var a = 'a'
+// var a = 'aa'
+// console.log(a);
 
 // let 不允许重复声明变量
-let b = 'b'
-let b = 'bb'
-console.log(b);
+// let b = 'b'
+// let b = 'bb'
+// console.log(b);
+
+
+
+
+
+
+
+// const
+
+// 会报错
+// const num = 1234
+// num = 1000
+// console.log(num);
+
+// 会报错
+// if (true) {
+//     console.log(sum);
+//     const sum = 100
+// }
+
+const message = 'Hello World'
+const message = 'Hello'
+console.log(message);
