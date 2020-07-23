@@ -45,7 +45,7 @@
 }
 .type {
     float: left;
-    margin-right: 48px;
+    margin-right: 44px;
 }
 .type:nth-child(3n){
     margin-right: 0;

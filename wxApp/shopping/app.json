@@ -1,13 +1,10 @@
 {
   "pages": [
+    "pages/cart/cart",
     "pages/index/index",
     "pages/category/category",
-    "pages/cart/cart",
     "pages/user/user",
-    "pages/jump/jump",
-    "pages/classification/guowei/guowei",
-    "pages/classification/shucai/shucai",
-    "pages/classification/chaohuo/chaohuo"
+    "pages/jump/jump"
   ],
   "window": {
     "backgroundTextStyle": "light",
