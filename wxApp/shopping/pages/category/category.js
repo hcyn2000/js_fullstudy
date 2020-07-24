@@ -158,8 +158,7 @@ Page({
   },
   list: function (e) {
     console.log(e)
-    let me = this;
-    me.setData({
+    this.setData({
       activeList: e.target.dataset.id,
       currentIndex: e.target.dataset.index
     })

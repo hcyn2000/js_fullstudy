@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="sec()">
+    <h3>操作成功</h3>
+
+    <p><span id="aaa"></span>秒后返回到主页 <a href="#" onclick="goBack()">返回</a></p>
+
+    <script type="text/javascript">
+        function goBack() {
+            window.open("http://www.imooc.com/");
+        }
+        var num = 10;
+        function sec() {
+            if (num > 0) {
+                document.getElementById("aaa").innerHTML = num;
+                num = num - 1;
+                setTimeout("sec()", 1000);
+            } else {
+                window.open("http://www.baidu.com/", "_self");
+            }
+        }
+    </script>
+</body>
+
+</html>
