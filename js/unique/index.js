@@ -15,8 +15,6 @@ let array = [1, 1, '1', '1']
 // }
 // console.log(unique(array));
 
-
-
 function unique(array) {
     //1. 将数组中的每一项拿出来作为主角
     //2.找到不是重复项放入这个数组中
