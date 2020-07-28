@@ -3,10 +3,9 @@ let parent = document.getElementById('content-items')
 
 
 send.addEventListener('click', function () {
-    //创建一个li标签
-    let li = document.createElement('li')
-    //给li加 setAttribute() 方法添加指定的属性，并为其赋指定的值。
-    li.setAttribute('class', 'content-item')
+
+    let li = document.createElement('li')//创建一个li标签
+    li.setAttribute('class', 'content-item') //给li加 setAttribute() 方法添加指定的属性，并为其赋指定的值。
 
     let divPic = document.createElement('div')
     divPic.setAttribute('class', 'pic')

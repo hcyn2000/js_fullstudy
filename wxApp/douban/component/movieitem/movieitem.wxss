@@ -1,0 +1,32 @@
+/* component/movieltem/movieltem.wxss */
+.item {
+    display: inline-flex;
+}
+.item .info {
+    display: flex;
+    flex-direction: column;
+}
+.name {
+    font-size: 32rpx;
+    font-weight: bold;
+    min-width: 200rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.img {
+    width: 201rpx;
+    height: 301rpx;
+    margin-bottom: 20rpx;
+    border-radius: 10rpx;
+}
+.score-wrapper {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.score-wrapper .score {
+    line-height: 40rpx;
+    font-size: 24rpx;
+    margin-left: 10rpx;
+}

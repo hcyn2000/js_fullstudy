@@ -1,0 +1,10 @@
+<!--component/nav-bar/nav-bar.wxml-->
+<view>
+    <view style="height: {{topHeight}}px;"></view> <!-- 用来弥补nav-bar的高度 -->
+    <view class="container">
+        <view style="{{statusBarStyle}}"></view> <!-- 手机头部显示电量栏 -->
+        <view class="nav-bar" style="{{navBarStyle}}">
+            {{title}}
+        </view>
+    </view>
+</view>

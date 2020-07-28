@@ -1,0 +1,10 @@
+<!--component/ratingStar/ratingStar.wxml-->
+<view class="stars">
+    <block wx:for="{{grade}}">
+        <image class="" src="../../assets/imgs/rating_star_small_on.png" />
+    </block>
+    <image wx:if="{{harf}}" class="" src="../../assets/imgs/rating_star_small_half.png" />
+    <block wx:for="{{off}}">
+        <image class="" src="../../assets/imgs/rating_star_small_off.png" />
+    </block>
+</view>
