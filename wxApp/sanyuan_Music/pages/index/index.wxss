@@ -1,0 +1,65 @@
+/**index.wxss**/
+.pages {
+  height: 100vh;
+}
+.slider-container {
+  height: 320rpx;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 8rpx;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide__img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 推荐歌单 */
+.recommend .title {
+  padding-left: 12rpx;
+  line-height: 120rpx;
+  font-weight: 700;
+}
+.sc-iAyFgw {
+  padding: 0 5rpx;
+  display: flex;
+  flex-direction: row;  /* 灵活的项目将水平显示，正如一个行一样。 */
+  flex-wrap: wrap;   /* 让弹性盒元素在必要的时候拆行 */
+  justify-content: space-around;    /* 在弹性盒对象的 <view> 元素中的各项周围留有空白 */
+}
+.sc-hSdWYo {
+  width: 240rpx;
+}
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240rpx;
+}
+.img-wrapper image {
+  width: 100%;
+  height: 100%;
+  border-radius: 6rpx;
+}
+.recommend .desc {
+  font-size: 24rpx;
+  margin-top: 4rpx;
+  line-height: 1.4;
+  height: 100rpx;
+  padding: 0 4rpx;
+}
+.play_count {
+  z-index: 1;
+  position: absolute;
+  right: 4rpx;
+  top: 4rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+  line-height: 15px;
+}
+.play_count image {
+  width: 28rpx;
+  height: 28rpx;
+}

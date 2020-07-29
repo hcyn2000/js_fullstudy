@@ -1,0 +1,24 @@
+<scroll-view class="pages" scroll-y="true">
+  <swiper class="slider-container" autoplay="true" interval="3000" indicator-dots="true" indicator-color="#aaa"
+    indicator-active-color="red" circular="true">
+    <swiper-item class="swiper-slide" wx:for="{{bannerList}}" wx:key="{{index}}">
+      <image class="swiper-slide__img" src="{{item.imageUrl}}" />
+    </swiper-item>
+  </swiper>
+  <view class="recommend">
+    <view class="title">推荐歌单</view>
+    <view class="sc-iAyFgw">
+      <view class="sc-hSdWYo" wx:for="{{recommendList}}" wx:key="{{index}}">
+        <view class="img-wrapper">
+          <image class="" src="{{item.picUrl}}" />
+          <view class="play_count">
+            <image class="" src="../../img/erji.png" />
+            <text
+              class="count">{{item.playCount>10000?(((item.playCount-item.playCount%10000)/10000+'万')):(item.playCount)}}</text>
+          </view>
+        </view>
+        <text class="desc">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
