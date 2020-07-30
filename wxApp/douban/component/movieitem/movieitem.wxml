@@ -1,14 +1,13 @@
 <!--component/movieltem/movieltem.wxml-->
 <view class="item">
     <view class="info">
-        <image class="img"
-            src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1380686388,3196464653&fm=11&gp=0.jpg">
+        <image class="img" src="{{movie.images.large}}">
         </image>
-        <view class="name">第一次的离别</view>
+        <view class="name">{{movie.title}}</view>
         <view class="score-wrapper">
             <!-- 展示星星 -->
-            <ratingStar score="3.5"></ratingStar>
-            <view class="score">9.0</view>
+            <ratingStar score="{{movie.numberStars}}"></ratingStar>
+            <view class="score">{{movie.rating.average}}</view>
         </view>
     </view>
 </view>

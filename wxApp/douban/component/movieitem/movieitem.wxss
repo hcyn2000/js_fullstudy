@@ -7,9 +7,9 @@
     flex-direction: column;
 }
 .name {
-    font-size: 32rpx;
+    font-size: 30rpx;
     font-weight: bold;
-    min-width: 200rpx;
+    max-width: 200rpx;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
