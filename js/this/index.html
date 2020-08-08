@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //隐式丢失  间接调用
+        // function foo() {
+        //     console.log(this.a);
+        // }
+        // var a = 2
+
+        // var obj = {
+        //     a: 3,
+        //     foo: foo
+        // }
+        // var p = { a: 4 }
+
+        // obj.foo();   //3
+
+        // //立即调用    
+        // (p.foo = obj.foo)() //2
+
+        // // p.foo = obj.foo
+        // p.foo() //4
+
+
+
+        //显示绑定
+        // var a = 0
+        // function foo() {
+        //     console.log(this.a);
+        // }
+        // var obj = {
+        //     a: 2
+        // }
+        // var bar = function () {
+        //     foo.call(obj)
+        // }
+        // bar()   //2
+
+
+        // 数组的forEach(fn,对象)
+        // var id = 'window';
+        // function fn(el) {
+        //     console.log(el, this.id);
+        // }
+        // var obj = {
+        //     id: 'fn'
+        // }
+        // var arr = [1, 2, 3];
+        // // arr.forEach(fn)  
+        // arr.forEach(fn, obj)
+
+
+        // new绑定
+        // var person = {
+        //     fav: function () {
+        //         return this;
+        //     }
+        // }
+        // var p = new person.fav();
+        // console.log(p); //fav {}
+
+
+        // 严格模式下，独立调用的函数内部的this指向了undefined
+        function fn() {
+            'use strict';
+            console.log(this);  //undefined
+        }
+        fn()
+
+
+
+        // 严格模式下，函数apply()和call()内部的this始终是它们的第一个参数
+        // var color = 'red';
+        // function showColor() {
+        //     // 'use strict';
+        //     console.log(this);      //{color: "blue"}
+        //     console.log(this.color);     //blue
+        // }
+        // var obj = {
+        //     color: 'blue'
+        // }
+        // showColor.call(obj)
+    </script>
+</body>
+
+</html>
