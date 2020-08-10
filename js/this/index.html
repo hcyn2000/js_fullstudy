@@ -31,7 +31,7 @@
 
 
 
-        //显示绑定
+        //显示绑定  call  apply  bind
         // var a = 0
         // function foo() {
         //     console.log(this.a);
@@ -45,16 +45,16 @@
         // bar()   //2
 
 
-        // 数组的forEach(fn,对象)
-        // var id = 'window';
-        // function fn(el) {
-        //     console.log(el, this.id);
-        // }
-        // var obj = {
-        //     id: 'fn'
-        // }
-        // var arr = [1, 2, 3];
-        // // arr.forEach(fn)  
+        // 数组的forEach(fn, 对象)
+        var id = 'window';
+        function fn(el) {
+            console.log(el, this.id);
+        }
+        var obj = {
+            id: 'fn'
+        }
+        var arr = [1, 2, 3];
+        arr.forEach(fn)
         // arr.forEach(fn, obj)
 
 
@@ -69,11 +69,11 @@
 
 
         // 严格模式下，独立调用的函数内部的this指向了undefined
-        function fn() {
-            'use strict';
-            console.log(this);  //undefined
-        }
-        fn()
+        // function fn() {
+        //     'use strict';
+        //     console.log(this);  //undefined
+        // }
+        // fn()
 
 
 
