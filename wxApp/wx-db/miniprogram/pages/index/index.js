@@ -17,20 +17,13 @@ Page({
       success: res => {
         // console.log(res.tempFilePaths);
         for (let filePath of res.tempFilePaths) {
-          let currentFileName = Math.floor(Math.random() * 100000).toString() + '.png';
-          wx.cloudwx.uploadFile({
+          let currentFileName = Math.floor(Math.random() * 1000000).toString() + '.png';
+          wx.cloud.uploadFile({
             cloudPath: currentFileName,
             filePath,
-            // header: {}, // 设置请求的 header
-            // formData: {}, // HTTP 请求中其他额外的 form data
-            success: function (res) {
+            success: res => {
+              console.log(res);
               // success
-            },
-            fail: function () {
-              // fail
-            },
-            complete: function () {
-              // complete
             }
           })
         }
@@ -42,7 +35,6 @@ Page({
         // complete
       }
     })
-
   },
   data: {
     products: []
