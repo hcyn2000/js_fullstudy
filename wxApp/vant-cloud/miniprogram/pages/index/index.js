@@ -11,6 +11,7 @@ Page({
     groupName: ""
   },
 
+
   showNewGroupModal() {   //新建群组点击事件
     this.setData({
       newGroupModal: true

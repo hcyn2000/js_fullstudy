@@ -3,6 +3,7 @@
     "van-icon": "@vant/weapp/icon/index",
     "van-dialog": "@vant/weapp/dialog/index",
     "van-field": "@vant/weapp/field/index",
-    "van-notify": "@vant/weapp/notify/index"
+    "van-notify": "@vant/weapp/notify/index",
+    "van-button": "@vant/weapp/button/index"
   }
 }

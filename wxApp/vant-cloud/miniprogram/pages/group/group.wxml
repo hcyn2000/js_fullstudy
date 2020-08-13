@@ -1,2 +1,23 @@
 <!--miniprogram/pages/group/group.wxml-->
-<text>miniprogram/pages/group/group.wxml</text>
+<view class="container">
+    <view class="myGroup">
+        <image class=""
+            src="https://677a-gzhiyi-154dd4-1256703754.tcb.qcloud.la/group3.png?sign=1119403c4109bbb505d07aa6d42ffdff&t=1545558495">
+        </image>
+        <view class="title">我的群组</view>
+    </view>
+    <view class="group" wx:for="{{ne}}">
+        <view class="groupName">{{item.name}}</view>
+        <view class="groupRigth">
+            <view class="groupImage">
+                <image class=""
+                    src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1791190915,4204258858&fm=26&gp=0.jpg">
+                </image>
+            </view>
+            <view class="icon-arrow">
+                <van-icon name="arrow" size="42rpx" color="#bdbdbd" />
+            </view>
+        </view>
+
+    </view>
+</view>
