@@ -34,5 +34,6 @@
         "selectedIconPath": "./images/user-light.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap9.json"
 }
