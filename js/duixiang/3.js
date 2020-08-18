@@ -37,9 +37,9 @@
 // arr.length = 2
 // console.log(arr);
 
-var str = 'abcd'
-str.length = 2
-console.log(str.length);
+// var str = 'abcd'
+// str.length = 2
+// console.log(str.length);
 // 隐式过程
 // new String('abcd').length = 2
 // delete length
