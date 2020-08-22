@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖动</title>
+    <style>
+        .box {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box')  //获取类名为box的容器
+        box.addEventListener('mousedown', () => {   //添加点击事件
+            function handleMove(event) {    //添加移动事件放到函数里面
+                // 前提 已经mousedown
+                // 修改类名为box容器的坐标
+                box.style.transform = `translate3d(${event.clientX}px,${event.clientY}px,0)`
+            }
+            document.addEventListener('mousemove', handleMove)  //添加鼠标移动事件，触发移动函数
+
+            function handleUp() {//添加移除鼠标点击事件和移动事件  放到一个函数里
+                document.removeEventListener('mousemove', handleMove)//清除鼠标移动事件，调用移动事件
+                document.removeEventListener('mouseup', handleUp) //清除鼠标左键抬起事件
+            }
+            document.addEventListener('mouseup', handleUp)  //添加一个松开鼠标左键事件，调用移除函数
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tap点击</title>
+    <style>
+        .box {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        // tap 点击
+        // 移动端 click 有一定的延迟 所以自己实现
+        // fastClick
+        const box = document.querySelector('.box')  //获取类名为box的容器
+        box.addEventListener('click', () => {
+            console.log('click start');
+        })
+        box.addEventListener('touchstart', () => {
+            console.log('自己的 tap 事件');
+        })
+        box.addEventListener('mousedown', (e) => {   //添加点击事件
+            // document.addEventListener('mouseup', handleUp)  //添加一个松开鼠标左键事件，调用移除函数
+        })
+    </script>
+</body>
+
+</html>
