@@ -22,10 +22,8 @@
             let time = setTimeout(() => {
                 console.log('触发了');
             }, 500)
-
             function handleUp() {//添加移除鼠标点击事件和移动事件  放到一个函数里
                 clearTimeout(time);
-                // document.removeEventListener('mousemove', handleMove)//清除鼠标移动事件，调用移动事件
                 document.removeEventListener('mouseup', handleUp) //清除鼠标左键抬起事件
             }
             document.addEventListener('mouseup', handleUp)  //添加一个松开鼠标左键事件，调用移除函数
