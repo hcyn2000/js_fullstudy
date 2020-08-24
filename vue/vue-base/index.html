@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.common.dev.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,17 +39,44 @@
             <span v-html="newMessage"></span>
         </div> -->
 
-        <div class="count">
+        <!-- <div class="count">
             <p>{{count}}</p>
             <button v-on:click="add">+</button>
+            缩写
             <button @click="reduce">-</button>
-        </div>
+        </div> -->
+
+        <!-- <div class="model">
+            <p>{{message}}</p>
+            <p>
+                v-model:
+                <input type="text" v-model="message">
+            </p>
+        </div> -->
+
+        <!-- <div class="pic">
+            <img v-bind:src="imgSrc" alt="">
+            缩写
+            <img :src="imgSrc" alt="">
+        </div> -->
+
+        <!-- <div @click="color" v-bind:class="{red:isRed}" :class="[className1,className2]">哈哈哈</div> -->
+
+        <!-- <div v-pre>{{message}}</div> -->
+
+        <!-- <div v-cloak>{{message}}</div> -->
+
+        <div v-once>{{message}}</div>
+        <input type="text" v-model="message">
     </div>
 
     <script>
         var app = new Vue({
             el: '#app',
             data: {
+                className1: 'active',
+                className2: 'wrapper',
+                isRed: false,
                 message: 'Hello',
                 newMessage: '<h2>Hello vue</h2>',
                 isSure: false,
@@ -50,7 +86,8 @@
                     { name: '啦啦啦', age: 19 },
                     { name: '哦哦哦', age: 20 },
                 ],
-                count: 0
+                count: 0,
+                imgSrc: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2490672449,3962457934&fm=26&gp=0.jpg'
             },
 
             methods: {
@@ -60,7 +97,11 @@
                 },
                 reduce() {
                     this.count--
-                }
+                },
+                color() {
+                    // console.log('hhs');
+                    this.isRed = !this.isRed
+                },
             },
 
             beforeCreate() {
