@@ -27,15 +27,14 @@ export default {
     login() {
       if (!this.user || !this.password) {
         this.$message.error("账号或密码不能为空！！！");
-      } else if (this.user === "admin" && this.password === "123456") {
+      } else {
         this.$message({
           message: "恭喜你，登陆成功。",
           type: "success",
         });
         // 路由跳转
-        this.$router.push({ path: "/home" });
-      } else {
-        this.$message.error("账号或密码错误！！！");
+        this.$router.push({ path: "/home", query: { name: this.user } });
+        // this.$emit("username", this.user);
       }
     },
   },
