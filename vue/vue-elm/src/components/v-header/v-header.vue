@@ -1,9 +1,12 @@
 <template>
-  <div class="header">
+  <div class="header" @click="showDetail">
     <div class="contert-wrapper">
+      <!-- 商家图片 -->
       <div class="avatar">
         <img width="64" height="64" :src="seller.avatar" alt />
       </div>
+
+      <!-- 商家信息 -->
       <div class="content">
         <div class="title">
           <span class="brand"></span>
@@ -15,12 +18,33 @@
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
       </div>
+
+      <!-- 五个 -->
+      <div class="support-count" v-if="seller.supports">
+        <span class="count">{{seller.supports.length}}个</span>
+        <i class="icon-keyboard_arrow_right"></i>
+      </div>
     </div>
+
+    <!-- 公告 -->
+    <div class="bulletin-wrapper">
+      <span class="bulletin-title"></span>
+      <span class="bulletin-text">{{seller.bulletin}}</span>
+      <i class="icon-keyboard_arrow_right"></i>
+    </div>
+
+    <!-- 背景图片 -->
+    <div class="background">
+      <img :src="seller.avatar" alt width="100%" height="100%" />
+    </div>
+
+    <header-detali :seller="seller" v-show="detailVisible" @hide="hideDetail"></header-detali>
   </div>
 </template>
 
 <script>
 import SupportIco from "@/components/support-ico/support-ico.vue";
+import HeaderDetali from "@/components/header-detail/header-detail";
 
 export default {
   props: {
@@ -31,13 +55,28 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      detailVisible: false,
+    };
+  },
   created() {
     setTimeout(() => {
       console.log(this.seller);
     }, 1000);
   },
+  methods: {
+    showDetail() {
+      this.detailVisible = true;
+    },
+    hideDetail(data) {
+      console.log(data);
+      this.detailVisible = data;
+    },
+  },
   components: {
     SupportIco,
+    HeaderDetali,
   },
 };
 </script>
@@ -111,6 +150,74 @@ export default {
       line-height: 12px;
       font-size: $fontsize-small-s;
     }
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.support-count {
+  position: absolute;
+  right: 12px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 14px;
+  background: $color-background-sss;
+}
+
+.support-count .count {
+  font-size: $fontsize-small-s;
+}
+
+.icon-keyboard_arrow_right {
+  margin-left: 2px;
+  line-height: 24px;
+  font-size: $fontsize-small-s;
+}
+
+.bulletin-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  line-height: 28;
+  padding: 0 8px;
+  background: $color-background-sss;
+
+  .bulletin-title {
+    flex: 0 0 22px;
+    width: 22px;
+    height: 12px;
+    margin-right: 4px;
+    bg-image('bulletin');
+    background-size: 22px 12px;
+    background-repeat: no-repeat;
+  }
+
+  .bulletin-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: $fontsize-small-s;
+  }
+
+  .icon-keyboard_arrow_right {
+    flex: 0 0 10px;
+    width: 10px;
+    font-size: $fontsize-small-s;
   }
 }
 </style>
