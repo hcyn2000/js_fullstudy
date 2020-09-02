@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- header 组件 -->
-    <v-header></v-header>
+    <v-header :seller="seller"></v-header>
 
     <router-view />
   </div>
@@ -28,7 +28,8 @@ export default {
       getSeller({
         id: this.seller.id,
       }).then((seller) => {
-        console.log(seller);
+        this.seller = Object.assign({}, this.seller, seller);
+        // console.log(this.seller);
       });
     },
   },
