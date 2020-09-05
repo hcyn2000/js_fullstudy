@@ -1,7 +1,7 @@
 <template>
   <div class="shop-cart">
     <div class="content">
-      <div class="content-left">
+      <div class="content-left" @click="showDetail">
         <div class="logo-wrapper">
           <div class="logo" :class="{'highlight': totalCount > 0}">
             <i class="icon-shopping_cart" :class="{'highlight': totalCount > 0}"></i>
@@ -10,15 +10,20 @@
             <span class="bubble">{{totalCount}}</span>
           </div>
         </div>
+        <!-- 总价格 -->
         <div class="price">¥{{totalPrice}}</div>
         <div class="desc">另需配送费¥ {{deliveryPrice}} 元</div>
       </div>
+      <!-- 多少钱起送 -->
       <div class="content-right" @click="pay">
         <div class="pay" :class="payClass">
           {{payDesc}}
         </div>
       </div>
     </div>
+    <!-- 详细信息显示 -->
+    <shop-cart-detail v-show="detailVisible" @hide="hideDetail" :selectFoods="selectFoods"></shop-cart-detail>
+    <!-- 点击加号出现动画 -->
     <div class="ball-container">
       <div v-for="(ball, index) in balls" :key="index">
         <transition 
@@ -33,26 +38,30 @@
         </transition>
       </div>
     </div>
+
+    
   </div>
 </template>
 
 <script>
+import ShopCartDetail from "@/components/shop-cart-detail/shop-cart-detail.vue";
+
 export default {
   props: {
     selectFoods: {
       type: Array,
       default() {
-        return []
-      }
+        return [];
+      },
     },
     deliveryPrice: {
       type: Number,
-      default: 0
+      default: 0,
     },
     minPrice: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   data() {
     return {
@@ -63,102 +72,112 @@ export default {
         { show: false },
         { show: false },
       ],
-      dropBalls: []
-    }
+      dropBalls: [],
+      detailVisible: false,
+    };
+  },
+  components: {
+    ShopCartDetail,
   },
   computed: {
     totalCount() {
-      let count = 0
+      let count = 0;
       this.selectFoods.forEach((food) => {
-        count += food.count
-      })
-      return count
+        count += food.count;
+      });
+      return count;
     },
     totalPrice() {
-      let price = 0
+      let price = 0;
       this.selectFoods.forEach((food) => {
-        price += food.count * food.price
-      })
-      return price
+        price += food.count * food.price;
+      });
+      return price;
     },
     payDesc() {
       if (this.totalPrice === 0) {
-        return `¥${this.minPrice}元起送`
+        return `¥${this.minPrice}元起送`;
       } else if (this.totalPrice < this.minPrice) {
-        let diff = this.minPrice - this.totalPrice
-        return `还差¥${diff}元起送`
+          let diff = this.minPrice - this.totalPrice;
+          return `还差¥${diff}元起送`;
       } else {
-        return '去结算'
-      }
+          return '去结算';
+      };
     },
     payClass() {
       if (!this.totalCount || this.totalPrice < this.minPrice) {
-        return 'not-enough'
+        return 'not-enough';
       } else {
-        return 'enough'
-      }
-    }
+        return 'enough';
+      };
+    },
   },
   methods: {
     pay() {
       if (this.totalPrice < this.minPrice) {
-        return
+        return;
       }
       this.$createDialog({
         title: '支付',
-        content: `您需要支付${this.totalPrice}元`
+        content: `您需要支付${this.totalPrice}元`,
       }).show()
     },
     drop(el) {
       // console.log(el)
       for (let i = 0; i < this.balls.length; i++) {
-        const ball = this.balls[i]
+        const ball = this.balls[i];
         if (!ball.show) {
-          ball.show = true
-          ball.el = el
-          this.dropBalls.push(ball)
-          return
-        }
-      }
+          ball.show = true;
+          ball.el = el;
+          this.dropBalls.push(ball);
+          return;
+        };
+      };
     },
     beforeDrop(el) {
-      let count = this.balls.length
+      let count = this.balls.length;
       while (count--) {
-        const ball = this.dropBalls[this.dropBalls.length - 1]
+        const ball = this.dropBalls[this.dropBalls.length - 1];
         if (ball.show) {
-          const rect = ball.el.getBoundingClientRect()
+          const rect = ball.el.getBoundingClientRect();
           // console.log(rect)
-          const x = rect.left - 32
-          const y = -(window.innerHeight - rect.top - 22)
-          el.style.display = ''
-          el.style.webkitTransform = `translate3d(0, ${y}px, 0)`
-          el.style.transform = `translate3d(0, ${y}px, 0)`
-          const inner = el.getElementsByClassName('inner-hook')[0]
-          inner.style.webkitTransform = `translate3d(${x}px, 0, 0)`
-          inner.style.transform = `translate3d(${x}px, 0, 0)`
+          const x = rect.left - 32;
+          const y = -(window.innerHeight - rect.top - 22);
+          el.style.display = '';
+          el.style.webkitTransform = `translate3d(0, ${y}px, 0)`;
+          el.style.transform = `translate3d(0, ${y}px, 0)`;
+          const inner = el.getElementsByClassName('inner-hook')[0];
+          inner.style.webkitTransform = `translate3d(${x}px, 0, 0)`;
+          inner.style.transform = `translate3d(${x}px, 0, 0)`;
         }
       }
     },
     dropping(el, done) {
       // console.log(el, done)
       this.$nextTick(() => {
-        el.style.webkitTransform = `translate3d(0, 0, 0)`
-        el.style.transform = `translate3d(0, 0, 0)`
-        const inner = el.getElementsByClassName('inner-hook')[0]
-        inner.style.webkitTransform = `translate3d(0, 0, 0)`
-        inner.style.transform = `translate3d(0, 0, 0)`
-        el.addEventListener('transitionend', done)
-      })
+        el.style.webkitTransform = `translate3d(0, 0, 0)`;
+        el.style.transform = `translate3d(0, 0, 0)`;
+        const inner = el.getElementsByClassName('inner-hook')[0];
+        inner.style.webkitTransform = `translate3d(0, 0, 0)`;
+        inner.style.transform = `translate3d(0, 0, 0)`;
+        el.addEventListener('transitionend', done);
+      });
     },
     afterDrop(el) {
-      const ball = this.dropBalls.shift()
+      const ball = this.dropBalls.shift();
       if (ball) {
-        ball.show = false
-        el.style.display = 'none'
+        ball.show = false;
+        el.style.display = 'none';
       }
-    }
-  }
-}
+    },
+    showDetail() {
+      this.detailVisible = !this.detailVisible
+    },
+    hideDetail(data) {
+      this.detailVisible = data;
+    },
+  },
+};
 </script>
 
 <style lang="stylus" scoped>

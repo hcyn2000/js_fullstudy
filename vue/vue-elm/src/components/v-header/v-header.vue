@@ -70,7 +70,7 @@ export default {
       this.detailVisible = true;
     },
     hideDetail(data) {
-      console.log(data);
+      console.log("...."+data);
       this.detailVisible = data;
     },
   },
