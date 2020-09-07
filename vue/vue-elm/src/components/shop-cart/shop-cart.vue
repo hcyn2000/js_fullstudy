@@ -22,7 +22,11 @@
       </div>
     </div>
     <!-- 详细信息显示 -->
-    <shop-cart-detail v-show="detailVisible" @hide="hideDetail" :selectFoods="selectFoods"></shop-cart-detail>
+    <shop-cart-detail 
+      v-show="detailVisible" 
+      @hide="hideDetail" 
+      :selectFoods="selectFoods" 
+      ></shop-cart-detail>
     <!-- 点击加号出现动画 -->
     <div class="ball-container">
       <div v-for="(ball, index) in balls" :key="index">
@@ -38,8 +42,6 @@
         </transition>
       </div>
     </div>
-
-    
   </div>
 </template>
 
@@ -171,7 +173,9 @@ export default {
       }
     },
     showDetail() {
-      this.detailVisible = !this.detailVisible
+      if(this.selectFoods.length > 0) {
+        this.detailVisible = !this.detailVisible 
+      }
     },
     hideDetail(data) {
       this.detailVisible = data;

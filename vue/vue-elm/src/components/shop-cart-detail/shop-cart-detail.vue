@@ -2,22 +2,29 @@
   <div class="shop-cart-detail" @click.stop="hide">
     <div class="mask"></div>
     <div class="constainer">
-        <div class="list-header">
-            <div class="title">购物车</div>
-            <div class="empty" @click="showBtn">清空</div>
-        </div>
-        <!-- 菜品 -->
-        <div class="list-content">
-            <cube-scroll-nav-panel>
-              <ul>
-                <li v-for="(selectFoods, index) in selectFoods" :key="index" class="food">
-                  <span class="name">{{selectFoods.name}}</span>
-                  <div class="price">￥{{selectFoods.count * selectFoods.price}}</div>
-                  <cart-control class="cart-control-wrapper"></cart-control>
-                </li>
-              </ul>
-            </cube-scroll-nav-panel>
-        </div>
+      <div class="list-header">
+        <div class="title">购物车</div>
+        <div class="empty" @click="showBtn">清空</div>
+      </div>
+      <!-- 菜品 -->
+        <cube-scroll ref="scroll" class="scroll-list-wrap">
+          <ul>
+            <li class="food" v-for="(selectFood, index) in selectFoods" :key="index">
+              <span class="name">{{selectFood.name}}</span>
+              <div class="price">￥{{selectFood.count * selectFood.price}}</div>
+              <cart-control :food="selectFood" class="cart-control-wrapper"></cart-control>
+            </li>
+          </ul>
+        </cube-scroll>
+      <!-- <div class="list-content">
+        <ul>
+          <li class="food" v-for="(selectFood, index) in selectFoods" :key="index">
+            <span class="name">{{selectFood.name}}</span>
+            <div class="price">￥{{selectFood.count * selectFood.price}}</div>
+            <cart-control :food="selectFood" class="cart-control-wrapper"></cart-control>
+          </li>
+        </ul>
+      </div>-->
     </div>
   </div>
 </template>
@@ -26,7 +33,7 @@
 import CartControl from "@/components/cart-control/cart-control";
 
 export default {
-  props:{
+  props: {
     selectFoods: {
       type: Array,
       default() {
@@ -35,111 +42,145 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      scrollbar: true,
+      startY: 0,
+    };
+  },
+  computed: {
+    options() {
+      return {
+        scrollbar: this.scrollbarObj,
+        startY: this.startY,
+      };
+    },
+    scrollbarObj: function () {
+      return this.scrollbar ? { fade: this.scrollbarFade } : false;
+    },
   },
   methods: {
     hide() {
       this.$emit("hide", false);
-      console.log(this.selectFoods);
+      // console.log(this.selectFoods);
     },
     showBtn() {
+      let that = this;
       this.$createDialog({
-        type: 'confirm',
-        content: '清空购物车？',
+        type: "confirm",
+        content: "清空购物车？",
         confirmBtn: {
-          text: '确定',
-          confirm: function(e){
-            console.log('123');
-          }
+          text: "确定",
         },
         cancelBtn: {
-          text: '取消',
+          text: "取消",
         },
-      }).show()
+        onConfirm: () => {
+          this.selectFoods.forEach((food) => {
+            food.count = 0;
+          });
+          console.log(this.selectFoods);
+        },
+      }).show();
     },
     // empty() {
 
     // }
   },
   components: {
-    CartControl
+    CartControl,
   },
-  computed: {
-  },
+  computed: {},
 };
 </script>
 
 <style lang="stylus" scoped >
 @import '../../common/stylus/variable.styl';
 
-.shop-cart-detail{
+.shop-cart-detail {
   position: fixed;
-  top 0
-  left 0
-  right 0
-  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
   bottom: 48px;
   pointer-events: auto;
   // background-color: skyblue;
 }
-.mask
+
+.mask {
+  z-index: -1;
   background-color: #07111b;
-  opacity: .6;
+  opacity: 0.6;
   overflow: hidden;
   pointer-events: auto;
-  position absolute
-  width 100%
-  height 100%
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .constainer {
-  position absolute
-  top 0
-  left 0
+  position: absolute;
+  left: 0;
+  bottom: 0;
   box-sizing: border-box;
   pointer-events: auto;
   width: 100%;
-  height 100%
   // transform: translate(-100%,-100%);
 }
-.list-header 
-  display flex
-  justify-content space-between
-  background: $color-background-ssss
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  background: $color-background-ssss;
   height: 40px;
   line-height: 40px;
   padding: 0 18px;
-  .title
+
+  .title {
     color: #333;
     float: left;
     font-size: 14px;
-  .empty
+  }
+
+  .empty {
     color: #00a0dc;
     float: right;
     font-size: 12px;
-.list-content
-  background: #fff;
-  max-height: 217px;
-  overflow: hidden;
+  }
+}
+
+.scroll-list-wrap {
   padding: 0 18px;
-  position: relative;
-  z-index: 1;
-  .food
+  max-height: 217px;
+  overflow hidden
+  background-color: #fff;
+
+  .food {
     box-sizing: border-box;
     padding: 12px 0;
     position: relative;
-    .name
+
+    .name {
       color: #333;
       font-size: 14px;
       line-height: 24px;
-    .price
+    }
+
+    .price {
+      position: absolute;
+      right: 90px;
       bottom: 12px;
       color: #f01414;
       font-size: 14px;
       font-weight: 700;
       line-height: 24px;
-      position: absolute;
-      right: 90px;
-    .cart-control-wrapper
+    }
+
+    .cart-control-wrapper {
       bottom: 6px;
       position: absolute;
       right: 0;
+    }
+  }
+}
 </style>
