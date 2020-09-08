@@ -4,6 +4,10 @@ import router from './router'
 import store from './store'
 
 import '../static/css/reset.styl'
+import '../static/css/plugin.styl'
+
+import { Toast } from '@/common/js/plugin'
+Vue.use(Toast)
 
 Vue.config.productionTip = false
 

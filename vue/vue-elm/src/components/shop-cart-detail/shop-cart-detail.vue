@@ -7,7 +7,8 @@
         <div class="empty" @click="showBtn">清空</div>
       </div>
       <!-- 菜品 -->
-        <cube-scroll ref="scroll" class="scroll-list-wrap">
+      <div class="scroll-list-wrap">
+        <cube-scroll ref="scroll">
           <ul>
             <li class="food" v-for="(selectFood, index) in selectFoods" :key="index">
               <span class="name">{{selectFood.name}}</span>
@@ -16,6 +17,7 @@
             </li>
           </ul>
         </cube-scroll>
+      </div>
       <!-- <div class="list-content">
         <ul>
           <li class="food" v-for="(selectFood, index) in selectFoods" :key="index">
@@ -152,7 +154,7 @@ export default {
 .scroll-list-wrap {
   padding: 0 18px;
   max-height: 217px;
-  overflow hidden
+  overflow: hidden;
   background-color: #fff;
 
   .food {
