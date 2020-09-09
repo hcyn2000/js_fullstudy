@@ -10,6 +10,9 @@ Toast.install = function (Vue, options) {
   }
 
   Vue.prototype.$toast = (tips, type) => {
+    if (document.querySelector('.vue-toast')) {
+      return
+    }
     if (type) {
       opt.defaultType = type  // 如果传了type,那么就使用该type作为位置的值
     }
@@ -17,6 +20,7 @@ Toast.install = function (Vue, options) {
     let toasTpl = Vue.extend({
       template: '<div class="vue-toast toast-' + opt.defaultType + '">' + tips + '</div>'
     })
+
     let tpl = new toasTpl().$mount().$el;
     document.body.appendChild(tpl)
     setTimeout(() => {
