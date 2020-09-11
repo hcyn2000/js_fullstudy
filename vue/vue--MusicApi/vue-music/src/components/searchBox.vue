@@ -1,4 +1,5 @@
 <template>
+<!-- 搜索框 -->
   <div class="search-box">
     <i class="iconfont">&#xe637;</i>
     <input type="text" ref="query" class="box" :placeholder="placeholder" v-model="query" />

@@ -1,11 +1,11 @@
-import VUe from 'vue'
+import Vue from 'vue'
 import axios from 'axios'
 
 const vue = new Vue()
 
 // axios
 axios.defaults.timeout = 10000    // 设置网络请求最大时长
-axios.defaults.basUrl = 'http://localhost:3000'
+axios.defaults.baseURL = 'http://localhost:3000'
 
 // 返回状态判断 （响应拦截）
 axios.interceptors.response.use(
@@ -14,7 +14,7 @@ axios.interceptors.response.use(
       vue.$toast('网络出问题了！！！')
       return Promise.reject(res)
     }
-    return res
+    return res.data
   },
   (error) => {
     vue.$toast('服务器出问题了！！！')
@@ -47,5 +47,9 @@ export default {
   // 热门搜索
   HotSearchKey() {
     return fetchGet('/search/hot')
+  },
+  // 搜索列表
+  MusicSearch(params) {
+    return fetchGet('/search',params)
   }
 }

@@ -1,4 +1,5 @@
 <template>
+<!-- 头部导航 -->
   <div class="tab">
     <router-link tag="div" to="/recommend" class="tab-item">
       <span class="tab-link">推荐</span>
