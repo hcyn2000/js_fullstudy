@@ -52,9 +52,9 @@ export default {
         method: "post",
         url: this.$util.baseUrl + "/users/userRegister",
         data: {
-          nickname: this.nickname.trim(),
           username: this.username.trim(),
           userpwd: this.userpwd.trim(),
+          nickname: this.nickname.trim(),
         },
       }).then((res) => {
         if (res.data.code === "80000") {

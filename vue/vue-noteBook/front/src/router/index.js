@@ -36,6 +36,38 @@ const routes = [
       title: '注册界面'
     }
   },
+  {
+    path: '/noteClass',
+    name: 'noteClass',
+    component: () => import('@/views/NoteClass.vue'),
+    meta: {
+      title: '日记分类'
+    }
+  },
+  {
+    path: '/noteList',
+    name: 'noteList',
+    component: () => import('@/views/NoteList.vue'),
+    meta: {
+      title: '日记详情'
+    }
+  },
+  {
+    path: '/noteDetail',
+    name: 'noteDetail',
+    component: () => import('@/views/NoteDetail.vue'),
+    meta: {
+      title: '日记详情'
+    }
+  },
+  {
+    path: '/addNote',
+    name: 'addNote',
+    component: () => import('@/views/AddNote.vue'),
+    meta: {
+      title: '写日记'
+    }
+  },
 ]
 
 const router = new VueRouter({

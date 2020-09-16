@@ -56,6 +56,23 @@ let insertUser = function (value) {
     return allServers.query(_sql, value)
 }
 
+// 根据日记类型查找对应的列表
+let findNoteListByType = function (note_type, userId) {
+    let _sql = `select * from note where note_type="${note_type}" and useId="${userId}";`
+    return allServers.query(_sql)
+}
+
+// 根据文章id查找文章详情
+let findNoteDetailById = function (id) {
+    let _sql = `select * from note where id="${id}";`
+    return allServers.query(_sql)
+}
+
+// 发表日记
+let insertNote = function (options) {
+    let _sql = `insert into note set c_time=?,m_time=?,note_content=?,head_img=?,title=?,note_type=?,useId=?,nickname=?;`
+    return allServers.query(_sql, options)
+}
 
 //导出方法
 module.exports = {
@@ -63,4 +80,7 @@ module.exports = {
     userLogin,
     findUser,
     insertUser,
+    findNoteListByType,
+    findNoteDetailById,
+    insertNote
 }
