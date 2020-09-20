@@ -5,16 +5,29 @@
     </div>
     <div class="bgd">
       <div class="content">
-        <span class="subject">题目一</span>
-        <ul v-for="(item, index) in content[0].details" :key="index">
-          <li class="list" @click="clickSelect(index)">
+        <span
+          class="subject"
+          v-for="(item, index) in titleNumber[subscript].word"
+          :key="index"
+        >题目{{item.num}}</span>
+        <ul>
+          <li
+            class="list"
+            @click="clickSelect(index,item.fraction)"
+            v-for="(item, index) in content[subscript].details"
+            :key="index"
+          >
             <span class="choose" :class="{'select':index == n}">{{item.option}}</span>
             <span class="answer">{{item.details}}</span>
           </li>
         </ul>
       </div>
     </div>
-    <span class="start" @click="clickBtn"></span>
+    <span
+      class="start"
+      @click="clickBtn"
+      :style="{backgroundImage:  'url('+(number == 5 ? require('../image/3-1.png') : require('../image/2-2.png'))  +')'}"
+    ></span>
   </div>
 </template>
 
@@ -25,36 +38,98 @@ export default {
       choice: false,
       n: -1,
       number: 1,
+      subscript: 0,
+      fraction: 0,
+      totalScore: 0,
+      bacImage: "../image/3-1.png",
+      image: "../image/2-2.png",
+      titleNumber: [
+        {
+          word: [{ num: "一" }],
+        },
+        {
+          word: [{ num: "二" }],
+        },
+        {
+          word: [{ num: "三" }],
+        },
+        {
+          word: [{ num: "四" }],
+        },
+        {
+          word: [{ num: "五" }],
+        },
+      ],
       content: [
         {
           details: [
-            { option: "A", details: "答案aaaa" },
-            { option: "B", details: "答案" },
-            { option: "C", details: "答案cccc" },
-            { option: "D", details: "答案dddd" },
+            { option: "A", details: "答案aaaa", fraction: 0 },
+            { option: "B", details: "正确答案", fraction: 20 },
+            { option: "C", details: "答案cccc", fraction: 0 },
+            { option: "D", details: "答案dddd", fraction: 0 },
           ],
         },
         {
           details: [
-            { option: "A", details: "答案aaaa" },
-            { option: "B", details: "答案" },
-            { option: "C", details: "答案cccc" },
-            { option: "D", details: "答案dddd" },
+            { option: "A", details: "正确答案", fraction: 20 },
+            { option: "B", details: "答案bbbb", fraction: 0 },
+            { option: "C", details: "答案cccc", fraction: 0 },
+            { option: "D", details: "答案dddd", fraction: 0 },
+          ],
+        },
+        {
+          details: [
+            { option: "A", details: "答案aaa", fraction: 0 },
+            { option: "B", details: "答案bbbb", fraction: 0 },
+            { option: "C", details: "正确答案", fraction: 20 },
+            { option: "D", details: "答案dddd", fraction: 0 },
+          ],
+        },
+        {
+          details: [
+            { option: "A", details: "答案aaa", fraction: 0 },
+            { option: "B", details: "答案bbbb", fraction: 0 },
+            { option: "C", details: "答案ccc", fraction: 0 },
+            { option: "D", details: "正确答案", fraction: 20 },
+          ],
+        },
+        {
+          details: [
+            { option: "A", details: "正确答案", fraction: 20 },
+            { option: "B", details: "答案bbbb", fraction: 0 },
+            { option: "C", details: "正确ccc", fraction: 0 },
+            { option: "D", details: "答案dddd", fraction: 0 },
           ],
         },
       ],
     };
   },
   methods: {
-    clickSelect(index) {
+    clickSelect(index, fraction) {
+      this.fraction = fraction;
+      console.log(this.fraction);
       this.n = index;
       this.choice = true;
     },
     clickBtn() {
       if (this.choice) {
         this.number++;
+        this.subscript++;
+        if (this.subscript == 5) {
+          this.subscript = 5;
+        }
+        this.n = -1;
+        this.choice = false;
+        this.totalScore += this.fraction;
+        console.log(this.totalScore);
       } else {
-        alert("这答案还不明显？？？");
+        alert("为什么不选一个？？？");
+      }
+      if (this.number > 5) {
+        this.$router.push({
+          path: "/score",
+          query: { totalScore: this.totalScore },
+        });
       }
     },
   },
@@ -124,7 +199,8 @@ export default {
   display: block;
   width: 112px;
   height: 54px;
-  background: url(../image/2-2.png) no-repeat;
+  background: no-repeat;
+  background-image: url(../image/2-2.png);
   background-size: 100% 100%;
 }
 </style>
