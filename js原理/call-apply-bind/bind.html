@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // bind 类似于 call  bind返回的是函数
+        Function.prototype.mybind = function (context) {
+            // 判断this指向调用bind的是不是对象
+            if (typeof this !== 'function') {
+                // 调用bind的不是函数
+                throw new TypeError('Bind must be called on a function')
+            }
+
+            let _this = this
+            const args = [...arguments].slice(1)
+            return function F() {
+                // 如果函数用了new
+                if (this instanceof F) {
+                    return new _this(...args, ...arguments)
+                } else {
+                    return _this.apply(context, args.concat(...arguments))
+                }
+            }
+        }
+
+        fn.mybind(obj)
+    </script>
+</body>
+
+</html>
