@@ -14,7 +14,7 @@ js是单线程，js里面的线程执行是互斥的，单线程节约内存
 同步代码
 异步代码 : 微任务 (microtask)    宏任务 (macrotask)
 
-微任务: Promise, process.nextTick, MutationObserver
+微任务: process.nextTick, Promise, MutationObserver
 宏任务: script, setTimeout, setInterval, setImmediate, I/O, UI rendering
 
 
