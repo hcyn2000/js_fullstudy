@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.1.0/axios.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.common.dev.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="笑话" @click="getJoke">
+        <p>{{joke}}</p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data() {
+                return {
+                    joke: '笑话'
+                }
+            },
+            methods: {
+                getJoke() {
+                    let that = this
+                    axios.get('https://autumnfish.cn/api/joke')
+                        .then((res) => {
+                            console.log(res);
+                            that.joke = res
+                        },
+                            ((err) => {
+
+                            })
+                        )
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
