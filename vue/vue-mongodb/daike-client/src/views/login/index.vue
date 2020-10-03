@@ -54,73 +54,71 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
-      account: "",
-      password: "",
-      rePassword: "",
-      isLogin: true,
-    };
+      account: '',
+      password: '',
+      rePassword: '',
+      isLogin: true
+    }
   },
   methods: {
     handleQuestion() {},
     handleRegister() {
-      this.isLogin = !this.isLogin;
+      this.isLogin = !this.isLogin
     },
     showLoginTip(status) {
       this.$toast.loading({
         message: status,
         forbidClick: true,
-        loadingType: "spinner",
-        duration: 0,
-      });
+        loadingType: 'spinner',
+        duration: 0
+      })
     },
-    ...mapActions["setUserInfo"],
+    ...mapActions(['setUserInfo']),
     login() {
       this.$http
         .login({
           account: this.account,
-          password: this.password,
+          password: this.password
         })
-        .then((res) => {
+        .then(res => {
           console.log(res);
-          this.$toast.clear();
+          this.$toast.clear()
           // 存数据
-          this.setUserInfo(res.data);
-          this.$router.push("/home");
-        });
+          this.setUserInfo(res.data)
+          this.$router.push('/home')
+        })
     },
     handleLogin() {
       if (this.account.trim() == "" || this.password.trim() == "") {
-        this.$toast.fail("用户名或密码不能为空");
-        return;
+        this.$toast.fail('用户名或密码不能为空!')
+        return
       }
-      if (this.isLogin) {
-        // login 登录
-        this.showLoginTip("登录中...");
-        this.login();
-      } else {
-        // register 注册
+      if (this.isLogin) { // login
+        this.showLoginTip('登录中...')
+        this.login()
+      } else { // register
         if (this.rePassword !== this.password) {
-          this.$toast.fail("密码不一致");
-          return;
+          this.$toast.fail('两次输入的密码不一致')
+          return
         }
-        this.showLoginTip("注册中...");
+        this.showLoginTip('注册中...')
         this.$http
           .register({
             account: this.account,
-            password: this.password,
+            password: this.password
           })
-          .then((res) => {
-            this.$toast.clear();
-            this.setUserInfo(res.data);
-            this.$router.push("/home");
-          });
+          .then(res => {
+            this.$toast.clear()
+            this.setUserInfo(res.data)
+            this.$router.push('/home')
+          })
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

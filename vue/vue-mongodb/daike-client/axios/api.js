@@ -9,8 +9,7 @@ export default function $axios(options) {
   return new Promise((resolve, reject) => {
     const instance = axios.create({
       baseURL: config.baseURL,
-      headers: {},
-      transformResponse: [function () { }]
+      transformResponse: [function() {}]
     })
 
     instance.interceptors.request.use(
@@ -38,7 +37,6 @@ export default function $axios(options) {
         return Promise.reject(error)
       }
     )
-
     instance.interceptors.response.use(
       response => {
         let data;
@@ -127,3 +125,4 @@ export default function $axios(options) {
       })
   })
 }
+

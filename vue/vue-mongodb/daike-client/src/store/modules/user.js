@@ -1,26 +1,26 @@
 const state = {
-    user: {}
+  user: {}
 }
 
 const getters = {
-    user: state => state.user
+  user: state => state.user
 }
 
 const mutations = {
-    SET_USER: (state, flag) => {
-        state.user = flag
-    }
+  SET_USER: (state, flag) => {
+    state.user = flag
+  }
 }
 
 const actions = {
-    setUserInfo({ commit }, flag) {
-        commit('SET_USER', flag)
-    }
+  setUserInfo ({ commit }, flag) {
+    commit('SET_USER', flag)
+  }
 }
 
 export default {
-    state,
-    getters,
-    mutations,
-    actions
+  state,
+  getters,
+  mutations,
+  actions
 }

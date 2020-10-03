@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view />
+    <router-view/>
   </div>
 </template>
 
@@ -16,4 +16,5 @@
   flex-direction: column;
   overflow: hidden;
 }
+
 </style>

@@ -1,4 +1,5 @@
-import apiLogin from './interface/login'
+import apiLogin from './interface/login';
+import apiRegister from './interface/register';
 
 const install = Vue => {
   if (install.installed) {
@@ -8,10 +9,11 @@ const install = Vue => {
 
   Object.defineProperties(Vue.prototype, {
     $http: {
-      get() {
+      get () {
         return Object.assign(
           {},
-          apiLogin
+          apiLogin,
+          apiRegister
         )
       }
     }
