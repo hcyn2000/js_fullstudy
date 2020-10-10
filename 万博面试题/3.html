@@ -1,0 +1,27 @@
+<ul class="container">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>1000</li>
+</ul>
+<div id="app"></div>
+<script>
+    const contain = document.querySelector('.container')
+    // let lis = document.querySelectorAll('.container li')
+    let lis = document.getElementsByTagName('li')   // 动态的
+    // 一个dom 同时属于一个父节点
+    for (let i = lis.length - 1; i >= 0; i--) {
+        contain.appendChild(lis[i])
+    }
+    document.querySelector('#app').appendChild(lis[0])
+
+
+
+    // let li = document.querySelectorAll('li')    // 6个
+    let li = document.getElementsByTagName('li') // 7个
+    console.log(li);    // 有7个
+    let liNode = document.createElement('li')
+    document.querySelector('#app').appendChild(liNode)
+</script>
