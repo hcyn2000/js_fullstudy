@@ -1,0 +1,17 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "强缓存\r ## cache-control\r 通用的",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "koa": "^2.13.0",
+    "koa-router": "^9.4.0",
+    "md5": "^2.3.0"
+  }
+}

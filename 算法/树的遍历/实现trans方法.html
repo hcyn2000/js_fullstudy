@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="app">
+            <h2></h2>
+            <h2></h2>
+        </h1>
+    </div>
+    <hr>
+    <script>
+        // 实现trans方法
+        // trans('get-element-by-id'); // 'getElementById'
+
+
+        // getAttribute('id') === 传进来的
+        function walk(root) {
+            if (root.getAttribute('id') === 'app') {
+                console.log('------', root);
+            }
+            if (root.children) {
+                for (let child of root.children) {
+                    // 所有子节点
+                    walk(child)
+                }
+            }
+            // console.log(root);
+        }
+        walk(document.documentElement)
+    </script>
+</body>
+
+</html>
