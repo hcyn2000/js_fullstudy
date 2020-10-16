@@ -1,0 +1,8 @@
+<script>
+    var regex = /a/g;
+    // lastIndex:  上一次匹配的位置
+    console.log(regex.test('abcabc'));  // 找到第一个a  true
+    console.log(regex.test('abcabc'));  // 找到第二个a  true
+    console.log(regex.test('abcabc'));  // 找不到第三个a    false
+    console.log(regex.test('abcabc'));  // 找到第一个a  true
+</script>

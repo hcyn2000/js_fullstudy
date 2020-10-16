@@ -1,0 +1,21 @@
+<script>
+    this.a = 20;
+    function go() {
+        console.log(this.a);    // 40  20  30  30
+        this.a = 30;
+    }
+    go.prototype.a = 40;
+    var test = {
+        a: 50,
+        init: function (fn) {
+            fn();   // 指向window
+            console.log(this.a);    // 50  50
+            return fn;
+        }
+    };
+    console.log((new go()).a);      // 30
+    test.init(go);  //只能改变 init 里面的this指向 test
+    var p = test.init(go);
+    p();
+
+</script>

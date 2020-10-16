@@ -15,7 +15,7 @@ app.use(async (ctx, next) => {
     // 设置为 允许的时候 Access-Control-Allow-Origin 需要是一个具体的域名
     // 不能是 *
     ctx.set('Access-Control-Allow-Credentials', true);
-    //Access-Control-allow-Max-Age: 预检请求的缓存时间 500ms 之内都不用再发预检请求
+    // Access-Control-allow-Max-Age: 预检请求的缓存时间 500ms 之内都不用再发预检请求     (每个浏览器初始时间不一样)
     // Access-Control-expose-Headers    前端 js 可以拿到的响应头有哪些
     await next();
 })
