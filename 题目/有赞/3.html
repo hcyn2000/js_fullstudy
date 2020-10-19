@@ -1,0 +1,35 @@
+<script>
+    let p = (t) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(t)
+            }, t);
+        })
+    }
+    // Promise.resolve()
+    let p3 = Promise.reject('Error')
+    let arr = [p(1000), p(2000), p3];
+
+    // Promise.all 所有的Promise 都成功输出数组    接收数组
+    console.time('a')
+    Promise.all(arr).then(r => {
+        console.timeEnd('a')
+        console.log(r)
+    }).catch((error) => {
+        console.log(error)  // 失败了，打出 'Error'
+    })
+
+    // Promise.allSettled  等所有任务执行完 都输出
+    Promise.allSettled(arr).then(r => {
+        console.log('-----', r);
+    })
+
+    // Promise.race     最快的Promise的状态为准  接收数组
+    console.time('a1')
+    Promise.race(arr).then(r => {
+        console.timeEnd('a1')
+        console.log(r)
+    }).catch((error) => {
+        console.log(error)  // 失败了，打出 'Error'
+    })
+</script>
