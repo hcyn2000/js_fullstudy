@@ -1,0 +1,21 @@
+<script>
+    // 头条
+    const obj = { a: { b: { c: { d: 3 } } } }
+
+    function getValue(obj, str, defaultValue) {
+        let paths = str.split('.')  // split() 方法用于把一个字符串分割成字符串数组。
+        for (let k of paths) {
+            if (obj.hasOwnProperty(k)) {    // hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性
+                obj = obj[k]
+            } else {
+                return defaultValue
+            }
+        }
+        return obj
+    }
+
+    // getValue(obj, 'a.b.c.d', 1) => 3(存在该属性返回该属性对应的值)
+
+    // getValue(obj, 'a.b.c.d.e', 1) => 1(出现错误返回传入的默认值)
+    console.log(getValue(obj, 'a.b.c.d', 1));
+</script>
