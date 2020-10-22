@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #el {
+      transition: all .5s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="el">123</div>
+  <script>
+    const el = document.querySelector('#el')
+    const divNode = document.createElement('div')
+    divNode.style.width = '30px'
+    divNode.style.height = '30px'
+    divNode.style.backgroundColor = 'red'
+    let img = new Image()
+    img.src = 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3001884651,1229479384&fm=26&gp=0.jpg'
+    let prePosition = el.getBoundingClientRect()
+    setTimeout(() => {
+      // document.body.insertBefore(divNode, el)
+      document.body.insertBefore(img, el)
+      let currentPosition = el.getBoundingClientRect()  // getBoundingClientRect用于获取某个元素相对于视窗的位置集合。集合中有top, right, bottom, left等属性。
+
+      // FLIP 反转  first last  invert  play
+      // el.style.transform = 'translateY(-20px)'
+      // el.style.transform = 'translateY(0px)'
+
+      // keyFrame
+      let keyFrame = [{
+        transform: `translateY(${prePosition.top - currentPosition.top}px)`
+      }, {
+        transform: 'translateY(0px)'
+      }]
+      // play
+      el.animate(keyFrame, {
+        duration: 500,
+        easing: 'ease-in-out'
+      })
+    }, 3000);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<script>
+  // 编程题：将数组转成树形结构的对象
+
+  var locationList = [
+    { id: 0, name: "中国" },
+    { id: 1, pid: 0, name: "北京市" },
+    { id: 2, pid: 1, name: "昌平区" },
+    { id: 3, pid: 1, name: "海淀区" },
+  ];
+
+  // 后面的这几项，该插到哪个节点里面去(树里面节点哪个id等于我自己的pid)
+  // 对树遍历一下
+  // if(id=== pid){.sub.push()}
+
+  function transform(arr) {
+    let root = arr.shift()
+    function insert(pid, child) {
+      function walk(node) {
+        if (node.id === pid) {
+          if (!node.sub) node.sub = []
+          node.sub.push(child)
+          // console.log('1', node);
+          return
+        }
+        if (node.sub) {
+          // console.log(node.sub);
+          for (let c of node.sub) {
+            console.log(c);
+            walk(c)
+          }
+        }
+      }
+      walk(root)
+    }
+    for (let child of arr) {
+      let { pid } = child
+      // console.log('2', child, '3', pid);
+      insert(pid, child)
+    }
+
+    return root
+  }
+  transform(locationList)
+</script>
