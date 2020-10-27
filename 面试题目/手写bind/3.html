@@ -1,0 +1,32 @@
+<script>
+  // 第一版
+  Function.prototype.myBind = function (THIS, ...arg1) {
+    let fn = this // 哪个函数调用bind
+    function T(...arg2) {
+      return fn.call(THIS, ...arg1, ...arg2)
+    }
+    return T
+  }
+
+  // 第二版
+  Function.prototype.myBind = function (THIS, ...arg1) {
+    let fn = this // 哪个函数调用bind
+    function T(...arg2) {
+
+      return fn.call(THIS, ...arg1, ...arg2)
+    }
+    T.prototype = Object.create(fn.prototype)
+    return T
+  }
+
+  // 第三版
+  Function.prototype.myBind = function (THIS, ...arg1) {
+    let fn = this // 哪个函数调用bind
+    function T(...arg2) {
+
+      return fn.call(this instanceof T ? this : THIS, ...arg1, ...arg2)
+    }
+    T.prototype = Object.create(fn.prototype)
+    return T
+  }
+</script>

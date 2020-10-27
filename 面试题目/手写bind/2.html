@@ -1,0 +1,33 @@
+<script>
+  Function.prototype.myBind = function (THIS, ...arg1) {
+    let fn = this // 哪个函数调用bind
+    function T(...arg2) {
+
+      return fn.call(this instanceof T ? this : THIS, ...arg1, ...arg2)
+    }
+    T.prototype = Object.create(fn.prototype)
+    return T
+  }
+
+  function sum(a, b, c) {
+    return a + b + c
+  }
+  sum.prototype.say = function () {
+    console.log(10);
+  }
+  let sum10 = sum.myBind(null, 10)
+  let obj = new sum10()
+  obj.say()
+  // console.log(sum10(20, 30));
+
+
+
+  let obj1 = {}
+  function Foo() {
+    this.abc = 1
+  }
+  let Bar = Foo.bind(obj1)
+  // Bar()    // this指向第一个参数
+  let b = new Bar() // this 指向实例
+  // 区分是否被new 调用?
+</script>
