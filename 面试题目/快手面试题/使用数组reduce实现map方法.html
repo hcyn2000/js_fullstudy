@@ -1,0 +1,35 @@
+<script>
+  Array.prototype.myMap = function (fn) {
+    let res = []
+    for (let i = 0; i < this.length; i++) {
+      let item = this[i]
+      res.push(fn(item))
+    }
+    return res
+  }
+  const d = [1, 2, 3].myMap(x => x + 1)
+  console.log(d);
+
+
+  Array.prototype.myMap1 = function (fn) {
+    // 1: pre = []  next: 1  =>  2
+    // 2: pre = [2]  next: 2  =>  3
+    // return pre => [2, 3]
+    return this.reduce((pre, next) => {
+      pre.push(fn(next))
+      return pre
+    }, [])
+  }
+  const r = [1, 2, 3].myMap1(x => x + 1)
+  console.log(r);
+
+
+  function readFile(fn) {
+    setTimeout(() => {
+      fn('hello,world')
+    }, 2000);
+  }
+  readFile((c) => {
+    console.log(c);
+  })
+</script>
