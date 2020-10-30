@@ -3,7 +3,7 @@ function curry(fn, len = fn.length) {
   return _curry.call(this, fn, len)
 }
 function _curry(fn, len, ...args) {
-  console.log(...args, '----');
+  // console.log(...args, '----');
   return function (...params) {
     let _args = [...args, ...params]
     if (_args.length >= len) {
