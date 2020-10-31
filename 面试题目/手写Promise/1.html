@@ -1,0 +1,29 @@
+<script>
+  function MyPromise(fn) {
+    let self = this
+    this.value = undefined
+    this.status = 'PENDING'
+
+    function onResolve(value) {  // 定义 什么时候执行
+      // console.log(value);
+      self.status = 'FULFILLED'
+      self.value = value
+      self.onFULFILLED && self.onFULFILLED(value)
+    }
+    function onReject(reason) { }
+    fn(onResolve, onReject)
+  }
+  MyPromise.prototype.then = function (fn) {
+    if (this.status === 'FULFILLED') fn(this.value)
+    else if (this.status === 'PENDING') this.onFULFILLED = fn
+  }
+
+  new MyPromise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(1000)   // 改变状态的时候执行
+    }, 1000);
+  })
+    .then(r => {
+      console.log(r);
+    })
+</script>
