@@ -23,6 +23,8 @@ const map = new Map([
 console.log(map);   //Map(2) { 'name' => '哈哈哈', 'age' => '14' }
 console.log(map.has('name'));       //true
 console.log(map.get('name'));       //哈哈哈
+
+
 const items = [
     ['name', '哈哈哈'],
     ['age', '14']
@@ -43,6 +45,11 @@ const m1 = new Map(set)
 console.log(m1);    //Map(2) { 'foo' => 1, 'bar' => 2 }
 
 
+const map = new Map();
+map.set(['a'], 555);
+map.get(['a']) // undefined
+
+
 const m = new Map()
 const k1 = ['a']
 const k2 = ['a']
@@ -55,7 +62,6 @@ const m = new Map()
 m.set(+0, 123)
 m.set(-0, 123)
 console.log(m); //Map(1) { 0 => 123 }
-
 
 const map = new Map()
 map.set(true, 1)
