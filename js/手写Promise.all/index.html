@@ -1,0 +1,46 @@
+<script>
+  function sleep(t) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(t)
+      }, t);
+    })
+  }
+
+  // Promise.all([sleep(1000), sleep(500), sleep(300), sleep(400)]).then(r => {
+  //   console.log(r);   // 四个同时启动
+  // })
+
+  // 如果并发限制为2    花费 1200ms
+  // 1000ms -> 3   
+  // 500ms -> 1
+  // 300ms -> 2
+  // 400ms -> 4
+
+
+  // 手写Promise.all
+  Promise.myall = function (promiseArr) {
+    return new Promise((resolve, reject) => {
+      let res = [], count = 0
+      for (let i = 0; i < promiseArr.length; i++) {
+        // i 原来在数组里面的循序
+        promiseArr[i].then((r) => {
+          // 最终成功的时候的循序
+          res[i] = r
+          count++
+          console.log(count);
+          if (count === promiseArr.length) {
+            resolve(res)
+          }
+        })
+          .catch(() => {
+            reject()
+          })
+      }
+    })
+  }
+
+  Promise.myall([sleep(1000), sleep(500), sleep(300), sleep(400)]).then(r => {
+    console.log(r);   // 四个同时启动
+  })
+</script>
