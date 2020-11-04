@@ -6,6 +6,7 @@
       :left-arrow="leftArrow"
       @click-left="goBack"
     />
+
     <van-search
       v-model="keyword"
       placeholder="请输入搜索关键词"
@@ -17,50 +18,50 @@
 </template>
 
 <script>
-import { Search, NavBar } from "vant";
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { NavBar, Search } from 'vant'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 export default {
   props: {
     title: {
       type: String,
-      default: "首页",
+      default: '首页'
     },
     leftArrow: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   components: {
     [NavBar.name]: NavBar,
-    [Search.name]: Search,
+    [Search.name]: Search
   },
   setup(props) {
-    const router = useRouter();
-    const leftText = ref("");
-    leftText.value = props.leftArrow ? "返回" : "";
+    const router = useRouter()
+    const leftText = ref('')
+    leftText.value = props.leftArrow ? '返回' : ''
 
     function goBack() {
-      router.go(-1);
+      router.go(-1)
     }
 
     function onFocus() {
-      router.push("/search");
+      router.push('/search')
     }
+
     return {
       leftText,
       goBack,
-      onFocus,
-    };
-  },
-};
+      onFocus
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
-.van-nav-bar {
-  color: #fff;
-  &::after {
-    border-bottom: none;
+.van-nav-bar{
+  &::after{
+    border-bottom-width: 0px;
   }
 }
 </style>
