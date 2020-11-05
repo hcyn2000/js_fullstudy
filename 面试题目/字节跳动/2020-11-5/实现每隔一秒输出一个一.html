@@ -1,0 +1,9 @@
+<script>
+  // setTimeout 实现 setInterval
+  function next() {
+    setTimeout(() => {
+      console.log(1);
+      next()
+    }, 1000);
+  }
+</script>
