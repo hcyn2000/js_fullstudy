@@ -1,0 +1,12 @@
+<script>
+  var value = 'tom';
+  function foo() {
+    eval('var value = 1000')
+    console.log(value)
+  }
+  function bar() {
+    var value = 'bob';
+    foo();
+  }
+  bar();
+</script>

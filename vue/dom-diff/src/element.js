@@ -14,30 +14,36 @@ function createElement(type, props, children) {
 // 设置属性
 function setAttr(node, key, value) {
   switch (key) {
-    // node 是input 或者textarea
-    case 'vlaue':
-      if (node.tagName.toUpperCase() === 'TNPUT' || node.tagName.toUpperCase() === 'TEXTAREA') {
+    case 'value': // node 是input或者textarea
+      if (node.tagName.toUpperCase() === 'INPUT' || node.tagName.toUpperCase() === 'TEXTAREA') {
         node.value = value
       } else {
         node.setAttribute(key, value)
       }
-      break;
+    break;
     case 'style':
       node.style.cssText = value
       break;
-    default:
+    default: 
       node.setAttribute(key, value)
+      break;
   }
 }
 
-// render方法将vonde转化为真实dom
+// {
+//   children: (2) [Element, Element]
+//   props: {value: "test"}
+//   type: "input"
+// }
+
+// render 方法将vnode转化为真实dom
 function render(eleObj) {
   let el = document.createElement(eleObj.type)
   for (let key in eleObj.props) {
     // 设置属性的方法
     setAttr(el, key, eleObj.props[key])
   }
-  // 遍历children节点 ,如果是虚拟DOM就递归渲染，不是就代表是文本节点，停止dig
+  // 遍历儿子节点，如果是虚拟dom，就递归渲染，不是就代表是文本节点
   eleObj.children.forEach(child => {
     child = (child instanceof Element) ? render(child) : document.createTextNode(child)
     el.appendChild(child)
@@ -50,4 +56,5 @@ function renderDom(el, target) {
   target.appendChild(el)
 }
 
-export { createElement, render, renderDom, Element }
+
+export { createElement, render, Element, renderDom }
