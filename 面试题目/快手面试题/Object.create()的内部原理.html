@@ -4,4 +4,11 @@
     Object.setPrototypeOf(obj, o)
     return obj
   }
+
+
+  function create1(o) {
+    function F() { }
+    F.prototype = o
+    return new F
+  }
 </script>
