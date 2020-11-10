@@ -1,0 +1,15 @@
+<script>
+  Function.prototype.a = function () {
+    alert(1);
+  }
+  Object.prototype.b = function () {
+    alert(2);
+  }
+
+  function A() {
+
+  }
+  let a = new A();
+  a.a();    // 报错
+  a.b();    // 输出
+</script>

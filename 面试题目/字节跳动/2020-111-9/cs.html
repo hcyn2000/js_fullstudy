@@ -1,0 +1,14 @@
+<script>
+  function Foo() {
+    getName = function () {
+      console.log(1)
+    }
+    return this;
+  }
+  Foo.getName = function () {
+    console.log(2)
+  }
+
+  console.log(Foo.getName);
+  console.log(Foo);
+</script>
