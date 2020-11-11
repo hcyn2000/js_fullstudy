@@ -1,0 +1,26 @@
+<script>
+  // .then 链式调用
+  // .then()  返回的都是 Promise 
+  Promise.resolve(1)
+    .then((x) => {
+      console.log(x);   // 1
+      return 2
+    }, () => { })
+    .then(x => {
+      console.log(x);   // 2
+    }, (err) => {
+      console.log(err);
+    })
+
+
+  async function fn1() {
+    let a = await 1
+    return a
+  }
+  let b = fn1()
+  console.log(b);
+  b.then(x => {
+    console.log(x);
+  })
+  // b 是一个Promise
+</script>
