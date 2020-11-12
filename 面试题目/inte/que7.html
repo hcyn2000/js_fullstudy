@@ -1,0 +1,20 @@
+<script>
+  // https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/30
+  // 全局作用域中，用 const 和 let 声明的变量不在 window 上，那到底在哪里？如何去获取？
+
+  // ES6规定，var 命令和 function 命令声明的全局变量，依旧是顶层对象的属性，但 let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性。
+
+  // 在全局作用域中，用 let 和 const 声明的全局变量并没有在全局对象中，只是一个块级作用域（Script）中
+  var a = 123
+  function f() { };
+  console.log(a); // 123
+  console.log(window.f); // f(){}
+
+  let b = 456
+  const bb = 2;
+  console.log(window.b); // undefined
+  console.log(window.bb); // undefined
+
+  // 查找声明变量的阶段，会把let和const声明的变量放到词法环境当中，而var声明的则在作用域当中
+  // 在定义变量的块级作用域中就能获取啊，既然不属于顶层对象，那就不加 window（global）
+</script>

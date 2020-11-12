@@ -1,0 +1,12 @@
+{
+  "name": "tree-shaking",
+  "version": "1.0.0",
+  "description": "entry.js 引入的js打包成一个文件\r import\r require",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode development"
+  },
+  "sideEffect": false,
+  "author": "",
+  "license": "ISC"
+}

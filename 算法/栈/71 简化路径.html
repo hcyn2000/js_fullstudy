@@ -1,0 +1,19 @@
+<script>
+  /**
+ * @param {string} path
+ * @return {string}
+ */
+  var simplifyPath = function (path) {
+    let arr = path.split('/'), res = []
+    for (let p of arr) {
+      if (p === '..') {
+        res.pop()
+      }
+      else if (!['.', ''].includes(p)) {
+        res.push(p)
+      }
+    }
+    return '/' + res.join('/')
+  };
+  simplifyPath("/a/./b/../../c/")
+</script>
