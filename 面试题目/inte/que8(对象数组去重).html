@@ -1,0 +1,35 @@
+<script>
+  // 对象数组去重
+  const responseList = [
+    { id: 1, a: 1 },
+    { id: 2, a: 2 },
+    { id: 3, a: 3 },
+    { id: 1, a: 4 },
+  ]
+
+
+  const result = responseList.reduce((acc, cur, index, arr) => {
+    console.log(acc);
+    console.log(cur);
+    console.log(index);
+    console.log(arr);
+    console.log('--------------');
+    const ids = acc.map(item => item.id)
+    return ids.includes(cur.id) ? acc : [...acc, cur]
+  }, [])
+
+
+
+
+// function quchong(arr) {
+//   let res = [], test = []
+//   arr.forEach((v) => {
+//     if(!test.includes(v['id'])) {
+//       res.push(v)
+//       test.push(v['id'])
+//     }
+//   })
+//   console.log(res);
+// }
+// quchong(responseList)}
+</script>

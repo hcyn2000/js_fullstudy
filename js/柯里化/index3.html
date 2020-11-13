@@ -1,0 +1,19 @@
+<script>
+  //把参数合并起来
+  function curry(fn) {
+    let arr = []
+    function t(...args) {
+      if (arr.length <= fn.length) {
+        arr.push(...args)
+        return t  //不是递归
+      } else {
+        fn.apply(null, arr)
+      }
+    }
+    return t
+  }
+
+  let sum = (a, b, c) => a + b + c
+  let fun = curry(sum)
+  fun(1)(2)(3)
+</script>
