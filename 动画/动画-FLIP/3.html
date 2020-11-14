@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      margin: 200px;
+      /* background-color: skyblue; */
+      border-radius: 50%;
+      animation: sky 3s ease infinite;
+    }
+
+    @keyframes sky {
+      0% {
+        background-color: red;
+      }
+
+      25% {
+        background-color: skyblue;
+        /* transform: scale(2); */
+      }
+
+      50% {
+        background-color: red;
+        transform: rotateX(180deg) translate(100px);
+
+      }
+
+      75% {
+        background-color: skyblue;
+      }
+
+      100% {
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>
