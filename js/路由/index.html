@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="/c" id="btn">btn</a>
+  <script>
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', (e) => {
+      window.history.pushState('hh', {}, '/c')
+      e.preventDefault();
+    })
+    window.addEventListener('popstate', () => {
+      console.log('页面变化了', window.location);
+    })
+  </script>
+</body>
+
+</html>

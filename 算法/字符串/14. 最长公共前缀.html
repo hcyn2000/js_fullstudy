@@ -1,0 +1,23 @@
+<script>
+  // https://leetcode-cn.com/problems/longest-common-prefix/
+
+
+  /**
+ * @param {string[]} strs
+ * @return {string}
+ */
+  var longestCommonPrefix = function (strs) {
+    let str = strs[0]
+    if (!str) return ''
+    let res = ''
+    for (let i = 0; i < str.length; i++) {
+      let flag = strs.every(item => item[i] == str[i])
+      if (flag) {
+        res += str[i]
+      } else {
+        return res
+      }
+    }
+    return res
+  };
+</script>
