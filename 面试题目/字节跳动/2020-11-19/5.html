@@ -1,0 +1,10 @@
+<script>
+
+  let worker = new Worker('./5worker.js')
+  worker.onmessage = function (sum) {
+    console.log(sum);
+  }
+  setTimeout(() => {
+    worker.postMessage('start')
+  }, 3000);
+</script>

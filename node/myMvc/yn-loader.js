@@ -28,7 +28,11 @@ function initRouter(app) {
 
       // 注册路由
       // app.get('/', ctx => {})
-      router[method](path === '/' ? prefix : prefix + path, routes[key])
+      // router[method](path === '/' ? prefix : prefix + path, routes[key])
+      router[method](path === '/' ? prefix : prefix + path, async ctx => {
+        app.ctx = ctx
+        await routes[key](app)
+      })
     })
   })
   return router
@@ -45,9 +49,43 @@ function initController(app) {
   return controllers
 }
 
+function initService() {
+  const services = {}
+  // 读取控制器目录
+  load('service', (filename, service) => {
+    services[filename] = service
+  })
+  return services
+}
+
+const Sequelize = require('sequelize')
+function loadConfig(app) {
+  load('config', (filename, conf) => {
+    if (conf.db) {
+      app.$db = new Sequelize(conf.db) // 初始化db操作的
+
+      // 加载模型
+      app.$model = {}
+      load('model', (filename, { schema, options }) => {
+        app.$model[filename] = app.$db.define(filename, schema, options) // 将sequelize一个个模型全部加载
+      })
+      app.$db.sync() // 模块同步
+    }
+
+    if (conf.middleware) {
+      conf.middleware.forEach(mid => {
+        const midPath = path.resolve(__dirname, 'middleware', mid)
+        app.$app.use(require(midPath))
+      })
+    }
+  })
+}
+
 module.exports = {
   initRouter,
-  initController
+  initController,
+  initService,
+  loadConfig
 }
 
 

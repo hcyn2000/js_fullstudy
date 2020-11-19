@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      width: 100vh;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bgc {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      display: flex;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .second {
+      width: 1px;
+      height: 100px;
+      background-color: red;
+      transform-origin: bottom center;
+      animation: second 60s linear infinite;
+    }
+
+    @keyframes second {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bgc">
+    <div class="second"></div>
+  </div>
+
+</body>
+
+</html>

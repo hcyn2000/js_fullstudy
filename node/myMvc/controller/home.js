@@ -1,8 +1,8 @@
-module.exports = {
+module.exports = (app) => ({
   index: async (ctx) => {
-    ctx.body = 'Ctrl Index'
+    app.ctx.body = await app.$model.user.findAll()
   },
   detail: async (ctx) => {
     ctx.body = 'Ctrl Detail'
   },
-}
+})
