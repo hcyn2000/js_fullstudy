@@ -1,0 +1,35 @@
+<script>
+  var a1 = { b: { c: {} } };
+
+  // 这是个浅拷贝的方法
+  function shallowClone(source) {
+    var target = {};
+    for (var i in source) {
+      if (source.hasOwnProperty(i)) {
+        target[i] = source[i];
+      }
+    }
+    return target;
+  }
+  var a2 = shallowClone(a1); // 浅拷贝方法
+  a2.b.c === a1.b.c // true 新旧对象还是共享同一块内存
+
+
+  // 这是个深拷贝的方法
+  function deepClone(obj) {
+    if (obj === null) return obj;
+    if (obj instanceof Date) return new Date(obj);
+    if (obj instanceof RegExp) return new RegExp(obj);
+    if (typeof obj !== "object") return obj;
+    let cloneObj = new obj.constructor();
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        // 实现一个递归拷贝
+        cloneObj[key] = deepClone(obj[key]);
+      }
+    }
+    return cloneObj;
+  }
+  var a3 = deepClone(a3); // 深拷贝方法
+  a3.b.c === a1.b.c // false 新对象跟原对象不共享内存
+</script>

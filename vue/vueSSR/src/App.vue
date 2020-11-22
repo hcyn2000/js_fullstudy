@@ -10,6 +10,13 @@ export default {
   components: {
     Com,
   },
+  beforeCreate() {
+    // node 里面输出的
+    console.log(111);
+  },
+  mounted() {
+    console.log(222);
+  },
 };
 </script>
 

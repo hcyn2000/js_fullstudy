@@ -1,0 +1,40 @@
+<!-- <script>
+  const arr = [1, [2, [3, [4, 5]]], 6];
+
+  function flat(arr) {
+    let stack = [...arr], res = []
+    while (stack.length) {
+      console.log(stack, '************');
+      let item = stack.pop()
+      console.log(stack, '------------');
+      console.log(item);
+      if (Array.isArray(item)) {
+
+        stack.push(...item)
+      } else {
+        res.unshift(item)
+      }
+    }
+    return res
+  }
+
+  console.log(flat(arr));
+</script> -->
+
+<script>
+  const arr = [[1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14]]]], 10];
+
+  function flat(arr) {
+    let res = []
+    while (arr.length) {
+      let item = arr.pop()
+      if (Array.isArray(item)) {
+        arr.push(...item)
+      } else {
+        res.unshift(item)
+      }
+    }
+    return res
+  }
+  console.log(flat(arr));
+</script>

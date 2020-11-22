@@ -1,0 +1,20 @@
+<script>
+  const arr = [[1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14]]]], 10];
+
+  function delayering(arr) {
+    let res = []
+    function fn(myarr) {
+      for (let i = 0; i < myarr.length; i++) {
+        if (Array.isArray(myarr[i])) {
+          fn(myarr[i])
+        }
+        else {
+          res.push(myarr[i])
+        }
+      }
+    }
+    fn(arr)
+    return res
+  }
+  console.log(delayering(arr)); // [1, 2, 3, 4, 6]
+</script>
