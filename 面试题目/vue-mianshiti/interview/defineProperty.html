@@ -1,0 +1,49 @@
+<script>
+  var data = {
+    name: 'yn',
+    age: 18,
+    like: {
+      one: 'reading',
+      two: 'rumming'
+    }
+  }
+
+  // observe(data)
+  // let name = data.name // get value
+  // data.name = 'hc'  // set value
+
+  // function observe(obj) {
+  //   for (let key in obj) {
+  //     Object.defineProperty(obj, key, {
+  //       get: function () {
+  //         return key
+  //       },
+  //       set: function (newVal) {
+  //         obj[key] = newVal
+  //       }
+  //     })
+  //   }
+  // }
+
+
+  function observe1(obj) {
+    Object.keys(obj).forEach(key => {
+      definePropertive(obj, key, obj[key])
+    })
+  }
+
+  function definePropertive(obj, key, val) {
+    if (typeof val === 'object' && val !== null) {
+      observe1(val)
+    }
+    Object.defineProperty(obj, key, {
+      get: function () {
+        return val
+      },
+      set: function (newVal) {
+        val = newVal
+      }
+    })
+  }
+  console.log(data);
+</script>

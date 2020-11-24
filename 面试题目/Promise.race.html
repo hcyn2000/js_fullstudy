@@ -11,7 +11,7 @@
       }
     })
   }
-  Promise.race([imagePromise(''), imagePromise('')])
+  Promise.race([imagePromise('图片地址'), imagePromise('图片地址')])
     .then(console.log())
     .catch(console.log())
 </script>
