@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  hahaha
+  <script>
+    // 设置meta标签 content="width=device-width
+    // 用touchend 代替 click 来解决延迟
+
+    document.body.addEventListener('touchend', function (event) {
+      console.log('touchend')
+      // 解决延迟问题
+      let e = new CustomEvent('click')
+      document.body.dispatchEvent(e)
+      event.preventDefault()
+    })
+    // 移动端点击事件有300ms延迟
+    document.body.addEventListener('click', function () {
+      console.log('click')
+    })
+
+    // 自定义事件
+    document.body.addEventListener('press', function () {
+      console.log('press');
+    })
+    setTimeout(() => {
+      let e = new CustomEvent('press')
+      document.body.dispatchEvent(e)
+    }, 3000);
+  </script>
+</body>
+
+</html>
