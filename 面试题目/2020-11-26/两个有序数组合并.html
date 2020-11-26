@@ -1,0 +1,30 @@
+<script>
+  // 两个有序数组合并
+  function merge(arr1, arr2) {
+    let arr = []
+    while (arr1.length && arr2.length) {
+      while (arr1[0] <= arr2[0]) {
+        arr.push(arr1.shift())
+      }
+      while (arr1[0] >= arr2[0]) {
+        arr.push(arr2.shift())
+      }
+    }
+    arr.push(...arr1.concat(arr2))
+    return arr
+  }
+
+  // 归并排序
+  function mersort(arr) {
+    if (arr.length <= 1) return arr;
+    let mid = Math.floor(arr.length / 2);
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
+    let leftPart = mersort(left);
+    let rightPart = mersort(right);
+    return merge(leftPart, rightPart)
+  }
+
+  console.log(merge([-1, 1, 4, 6, 13], [-5, 3, 8, 10]));
+  console.log(mersort([-4, -6, 5, -8, 9, -11]));
+</script>
