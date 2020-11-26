@@ -1,4 +1,5 @@
 http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html
+https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Set-Cookie/SameSite
 ## 登录
 cookie 保存用户信息，后续一段就不用再登录了
 api.juejin.cn
