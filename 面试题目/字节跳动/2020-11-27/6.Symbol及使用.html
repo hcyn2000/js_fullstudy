@@ -1,0 +1,9 @@
+<script>
+  let a = Symbol(1)
+  let b = Symbol(1)
+  let obj = {
+    // 元编程: 对编程语言的再编程
+    [Symbol.iterator]: (){ }  // 迭代器
+    [Symbol.hasInstance]: (){ } // instanceOf
+  }
+</script>

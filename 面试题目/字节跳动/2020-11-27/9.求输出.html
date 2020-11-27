@@ -1,0 +1,15 @@
+<script>
+  new Promise((resolve, reject) => {
+    console.log('a')  // 1
+    setTimeout(function () {
+      console.log('b')  // 4
+    })
+    resolve()
+  }).then(() => {
+    console.log('c')  // 3
+  })
+  setTimeout(function () {
+    console.log('d')  //  5
+  })
+  console.log('e')  // 2
+</script>

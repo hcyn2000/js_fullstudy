@@ -1,0 +1,28 @@
+<script>
+  // var bar = {
+  //   myName: "bar",
+  //   printName: function () {
+  //     console.log(myName)
+  //     console.log(this)
+  //   }
+  // }
+  // function foo() {
+  //   let myName = "foo"
+  //   return bar.printName
+  // }
+  // let myName = "global"
+  // let _printName = foo()
+  // _printName()  // "global"   window
+  // bar.printName() // "global"  bar
+
+
+  let name = 123
+  function foo() {
+    console.log(this.name)
+  }
+  function bar() {
+    let name = 345
+    foo()
+  }
+  bar()
+</script>
