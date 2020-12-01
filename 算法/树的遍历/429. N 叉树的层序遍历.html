@@ -1,0 +1,34 @@
+<script>
+  // https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/
+
+  /**
+ * // Definition for a Node.
+ * function Node(val,children) {
+ *    this.val = val;
+ *    this.children = children;
+ * };
+ */
+
+  /**
+   * @param {Node} root
+   * @return {number[][]}
+   */
+  var levelOrder = function (root) {
+    let queue = [root], res = []
+    if (!root) return res
+    while (queue.length) {
+      let row = queue.splice(0)
+      let rowVlaue = []
+      for (let node of row) {
+        rowVlaue.push(node.val)
+        if (node.children) {
+          for (let child of node.children) {
+            queue.push(child)
+          }
+        }
+      }
+      res.push(rowVlaue)
+    }
+    return res
+  };
+</script>
