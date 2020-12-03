@@ -1,0 +1,38 @@
+<script>
+  // 递归方法
+  function clac(n) {
+    let res = []
+    function walk(num, n = 2) {
+      if (num === n) {
+        res.push(n)
+        return
+      }
+      if (num % n === 0) {
+        res.push(n)
+        walk(num / n, n)
+      } else {
+        walk(num, n + 1)
+      }
+    }
+    walk(n)
+    return res
+  }
+  console.log(clac(30));
+
+
+  // 循环方法
+  function calc(n) {
+    let num = n, p = 2, res = []
+    while (num !== p) {
+      if (num % p === 0) {
+        res.push(p)
+        num = num / p
+      } else {
+        p++
+      }
+    }
+    res.push(p)
+    return res
+  }
+  console.log(calc(30));
+</script>

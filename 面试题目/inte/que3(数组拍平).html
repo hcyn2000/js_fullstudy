@@ -47,4 +47,13 @@
     }, [])
   }
   console.log(flatten(arr));
+
+  // 方法4
+  console.log(arr.flat(Infinity));
+
+  // 方法5
+  let a = arr.toString().split(',').map(x => {
+    return Number(x)
+  })
+  console.log(a);
 </script>
