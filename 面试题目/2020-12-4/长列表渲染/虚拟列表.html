@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #wrap {
+      height: 100vh;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <div style="height: 10000px;"></div>
+    <!-- 放一百条数据: 能在视窗之内被用户看到的内容 -->
+    <div id="list"></div>
+  </div>
+  <script>
+    let d = []  // 100条数据
+    for (let i = 0; i < 100; i++) {
+      d.push({ value: i })
+    }
+    let itemSize = 100 // li高度为100
+    const wrap = document.getElementById('wrap')
+    const list = document.getElementById('list')
+    const onScroll = () => {
+      const scrollTop = wrap.scrollTop
+      const start = Math.floor(scrollTo / 100)  // 下
+      const visableCount = window.innerHeight / 100 // 上
+      const end = start + visableCount
+      const data = d.slice(start, end >= d.length ? d.length : end)
+      list.innerHTML = data.map(x => {
+        return `<li>${x.value}</li>`
+      }).join('')
+    }
+    onScroll()
+    wrap.addEventListener(scroll, onScroll)
+  </script>
+</body>
+
+</html>

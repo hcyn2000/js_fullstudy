@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="list"></div>
+  <script>
+    const list = document.getElementById('list')
+    // for (let i = 0; i < 10000; i++) {
+    //   const li = document.createElement('li')
+    //   li.textContent = i
+    //   list.appendChild(li)
+    // }
+
+    // 时间分片
+    let i = 0
+    work()
+    function work() {
+      if (i >= 100) return
+      i++
+      for (let i = 0; i < 100; i++) {
+        const li = document.createElement('li')
+        li.textContent = i
+        list.appendChild(li)
+      }
+      // 等100条渲染完
+      setTimeout(() => {
+        work()
+      }, 16);
+    }
+  </script>
+</body>
+
+</html>
