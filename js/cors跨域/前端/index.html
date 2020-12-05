@@ -1,0 +1,17 @@
+<script>
+  // 简单请求  // 简单请求(可以以原生form的形式)  vs  非简单请求(fetch xml)
+  // 非简单请求 : 以 OPTIONS 请求方法发出一个预检(preflight)请求看一下是否允许跨域，通过了才发出正式请求
+
+  const xhr = new XMLHttpRequest()
+  xhr.open('POST', 'http://127.0.0.1:9090/', true)
+  let user = {
+    name: 'name',
+    pwd: 'pwd'
+  }
+  xhr.setRequestHeader('Content-Type', 'application/json')
+  xhr.onload = function () {
+    console.log(xhr.response);
+    console.log(xhr.getAllResponseHeaders());
+  }
+  xhr.send(JSON.stringify(user))
+</script>
