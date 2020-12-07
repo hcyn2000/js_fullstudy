@@ -1,0 +1,13 @@
+<script>
+  let ins = null
+  function Animal() {
+    this.name = 'name'
+    if (!ins) ins = this
+    return ins
+  }
+
+  let an1 = new Animal()
+  let an2 = new Animal()
+
+  console.log(an1 === an2);
+</script>
