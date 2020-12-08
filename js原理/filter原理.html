@@ -1,0 +1,11 @@
+<script>
+  Array.prototype.myFilter = function (cb) {
+    let t = []
+    for (let i = 0; i < this.length; i++) {
+      let num = this[i];
+      cb(num) && t.push(num);
+    }
+    return t;
+  }
+  arr.myFilter(x => x >= 2)
+</script>

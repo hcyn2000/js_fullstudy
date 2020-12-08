@@ -1,0 +1,15 @@
+<script>
+  // forEach
+  let arr = [1, 2, 3, 4, 5, 6]
+  arr.forEach((value, key) => {
+    return arr[key] = value * value;
+  });
+  console.log(arr);
+
+  // map
+  let arr2 = [1, 2, 3, 4, 5, 6]
+  let list = arr2.map(value => {
+    return value * value;
+  });
+  console.log(arr2, list);
+</script>

@@ -1,0 +1,21 @@
+<script>
+  Array.prototype.myMap = function (cb) {
+    let t = []
+    for (let i = 0; i < this.length; i++) {
+      let num = this[i]
+      t.push(cb(num))
+    }
+    return t
+  }
+  let arr = [1, 1, 2, 3, 4]
+  const sum = arr.myMap((a) => a + 2)
+  console.log(sum);
+
+
+  // reduce 实现 map
+  Array.prototype.myMap2 = function (cb) {
+    this.reduce((pre, current) => {
+      return pre.concat(cb(current))
+    }, [])
+  }
+</script>
