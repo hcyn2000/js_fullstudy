@@ -1,0 +1,51 @@
+<script>
+  // 1、请在不影响原调用的情况下简化下列方法
+  // 封装一下 把共同的逻辑提取出来
+  function func1(c) {
+    const a = 1
+    const b = 2
+
+    const d = a * b * c
+
+    return a + b + c + d
+  }
+
+  function func2(c) {
+    const a = 1
+    const b = 2
+
+    const d = a + b + c
+
+    return a + b + c + d
+  }
+
+  function func3(c) {
+    const a = 1
+    const b = 2
+
+    const d = a - b + c
+
+    return a + b + c + d
+  }
+
+  function func4(c) {
+    const a = 1
+    const b = 2
+
+    const d = a + b - c
+
+    return a + b + c + d
+  }
+
+  function fun(maked) {
+    const a = 1
+    const b = 2
+
+    return function (c) {
+      const d = maked(a, b, c)
+      return a + b + c + d
+    }
+  }
+  const f1 = fun((a, b, c) => a * b * c)
+  f1(4) === func1(4)
+</script>

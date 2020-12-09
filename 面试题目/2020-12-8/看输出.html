@@ -1,0 +1,32 @@
+<script>
+  window.name = 'ByteDance';
+  function A() {
+    console.log(this.name);   // 456
+    this.name = 123;
+  }
+  A.prototype.getA = function () {
+    console.log(this);  // window
+    return this.name + 1;   // ByteDance1
+  }
+  A.prototype.name = 456;
+  let a = new A();
+  let funcA = a.getA;
+  console.log(funcA());
+
+  // new
+  function myNew(Const) {
+    let obj = {}
+    Object.setPrototypeOf(obj, Const.prototype)
+    Const.call(obj)
+  }
+
+
+
+  var func1 = x => x;
+  var func2 = x => { x };
+  var func3 = x => ({ x });
+  console.log(func1(1));  // 1
+  console.log(func2(1));  // undefined
+  console.log(func3(1));  // { x: 1}
+
+</script>
