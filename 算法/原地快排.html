@@ -1,0 +1,27 @@
+<script>
+  // [-9, -1, 2, 5, 8, 9]
+  // p = 5;
+  let arr = [0, -1, 2, 5, 8, 9, -99]
+  quickSort(arr, 0, arr.length - 1);
+  console.log(arr);
+  function quickSort(arr, left, right) {
+    if (left >= right) return;
+    let p = arr[left];
+    let l = left, r = right;
+    while (l < r) {
+      // 在 右边 < p
+      while (arr[r] > p && l < r) r--;
+      arr[l] = arr[r];
+      // 在 左边 > p
+      while (arr[l] < p && l < r) l++;
+      arr[r] = arr[l];
+    }
+    arr[l] = p;
+    // [left, right] 数组上完整的一段区间
+    // [left, ... l, ... right] 
+    // debugger;
+    quickSort(arr, left, l - 1);
+    quickSort(arr, l + 1, right);
+  }
+  // console.log(quickSort([5, 9, -1, 2, -9, 8, 0]))
+</script>
