@@ -1,0 +1,29 @@
+var存在变量提升，let和const存在暂时性死区，所以不能再声明前使用
+var在全局作用域下声明会被挂载到window上，let和const不会
+同一作用域下let和const不能声明同名变量，var可以
+let和const的声明形成块级作用域，var不存在此作用域
+<script>
+  let b = 1
+  b = 2
+  console.log(b); // 2
+  const a = 1
+  a = 2
+  console.log(a); // 报错
+
+
+  // var a = [];
+  // for (var i = 0; i < 10; i++) {
+  //   a[i] = function () {
+  //     console.log(i);
+  //   };
+  // }
+  // a[1]()
+
+  // var s = 'hello';
+
+  // for (var i = 0; i < s.length; i++) {
+  //   console.log(s[i]);
+  // }
+
+  // console.log(i); // 5
+</script>

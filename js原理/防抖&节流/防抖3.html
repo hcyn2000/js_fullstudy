@@ -1,0 +1,16 @@
+<input type="text">
+<script>
+  function fangDou(fn) {
+    let timeout = null
+    return function () {
+      clearTimeout(timeout)
+      timeout = setTimeout(() => {
+        fn.apply(this, arguments)
+      }, 500);
+    }
+  }
+  function a() {
+    console.log('成功');
+  }
+  document.querySelector('input').addEventListener('input', fangDou(a))
+</script>

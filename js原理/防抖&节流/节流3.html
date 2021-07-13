@@ -1,0 +1,18 @@
+<div>1111</div>
+<script>
+  function jieLiu(fn) {
+    let timeout = null
+    return function () {
+      if (!timeout) {
+        timeout = setTimeout(() => {
+          fn()
+          timeout = null
+        }, 1000);
+      }
+    }
+  }
+  function a() {
+    console.log('节流');
+  }
+  document.querySelector('div').addEventListener('click', jieLiu(a))
+</script>

@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/index/index"
+    "index/index",
+    "navigate/navigate",
+    "redirect/redirect"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

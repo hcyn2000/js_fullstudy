@@ -1,13 +1,12 @@
 {
   "pages": [
-    "pages/index/index"
+    "index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "camera",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
